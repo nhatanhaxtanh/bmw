@@ -12,7 +12,7 @@ export default function NotFound() {
         className="pointer-events-none absolute -top-40 left-1/4 size-[460px] rounded-full bg-bmw-700/30 blur-[120px]"
       />
       <div className="container-page relative text-center">
-        <BmwRoundel className="mx-auto size-16 text-white" />
+        <BmwRoundel variant="white" className="mx-auto size-16" />
         <p className="font-heading mt-8 text-7xl font-bold sm:text-8xl">404</p>
         <h1 className="font-heading mt-4 text-2xl font-semibold sm:text-3xl">
           Trang quý khách tìm không tồn tại

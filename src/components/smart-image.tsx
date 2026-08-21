@@ -42,7 +42,10 @@ export function SmartImage({
         <div className="absolute inset-0 opacity-[0.14] [background-image:repeating-linear-gradient(115deg,transparent_0_18px,#fff_18px_19px)]" />
         <div className="absolute -right-10 -bottom-16 size-64 rounded-full bg-white/10 blur-3xl" />
         <div className="relative flex flex-col items-center gap-3 px-6 text-center">
-          <BmwRoundel className="size-12 text-white/90 drop-shadow" />
+          <BmwRoundel
+            variant="white"
+            className="size-12 opacity-90 drop-shadow"
+          />
           {placeholderLabel ? (
             <span className="max-w-[22ch] text-[11px] font-medium tracking-[0.16em] text-white/70 uppercase">
               {placeholderLabel}

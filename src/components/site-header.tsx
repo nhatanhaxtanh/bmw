@@ -48,7 +48,7 @@ export function SiteHeader() {
         <div className="m-stripe h-[3px] w-full" />
         <div className="container-page flex h-18 items-center justify-between gap-4">
           <Link href="/" aria-label={site.name}>
-            <SiteLogo invert={overlay} />
+            <SiteLogo invert={overlay} priority />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">

@@ -41,7 +41,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">
-              <BmwRoundel className="size-11 text-white" />
+              <BmwRoundel variant="white" className="size-11" />
               <div>
                 <p className="font-heading text-sm font-semibold tracking-[0.22em] text-white uppercase">
                   Sài Gòn

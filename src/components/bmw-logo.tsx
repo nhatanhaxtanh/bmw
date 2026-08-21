@@ -1,59 +1,53 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
-/** BMW roundel — vector, không phụ thuộc file ảnh. */
-export function BmwRoundel({ className }: { className?: string }) {
+/**
+ * Logo BMW chính thức.
+ * - `variant="color"`: bản viền xám — dùng trên nền sáng.
+ * - `variant="white"`: bản viền trắng — dùng trên nền tối.
+ */
+export function BmwRoundel({
+  className,
+  variant = "color",
+  priority = false,
+}: {
+  className?: string;
+  variant?: "color" | "white";
+  priority?: boolean;
+}) {
   return (
-    <svg
-      viewBox="0 0 100 100"
-      role="img"
-      aria-label="BMW"
-      className={cn("size-9", className)}
-    >
-      <defs>
-        <clipPath id="bmw-roundel-clip">
-          <circle cx="50" cy="50" r="34" />
-        </clipPath>
-      </defs>
-      <circle cx="50" cy="50" r="48" fill="currentColor" />
-      <circle cx="50" cy="50" r="34" fill="#fff" />
-      <g clipPath="url(#bmw-roundel-clip)">
-        <rect x="50" y="16" width="34" height="34" fill="#0066b1" />
-        <rect x="16" y="50" width="34" height="34" fill="#0066b1" />
-      </g>
-      <circle
-        cx="50"
-        cy="50"
-        r="34"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <text
-        x="50"
-        y="12.5"
-        textAnchor="middle"
-        fontSize="12.5"
-        fontWeight="700"
-        fill="#fff"
-        fontFamily="Helvetica, Arial, sans-serif"
-      >
-        BMW
-      </text>
-    </svg>
+    <Image
+      src={
+        variant === "white"
+          ? "/images/logo/bmw-roundel-white.webp"
+          : "/images/logo/bmw-roundel.webp"
+      }
+      alt="BMW"
+      width={960}
+      height={960}
+      priority={priority}
+      sizes="96px"
+      className={cn("size-9 object-contain", className)}
+    />
   );
 }
 
 export function SiteLogo({
   className,
   invert = false,
+  priority = false,
 }: {
   className?: string;
   invert?: boolean;
+  priority?: boolean;
 }) {
   return (
     <span className={cn("flex items-center gap-2.5", className)}>
       <BmwRoundel
-        className={cn("size-10 shrink-0", invert ? "text-white" : "text-[#16588e]")}
+        variant={invert ? "white" : "color"}
+        priority={priority}
+        className="size-10 shrink-0"
       />
       <span className="flex flex-col leading-none">
         <span
