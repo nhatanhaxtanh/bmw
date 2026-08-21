@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BMW Sài Gòn — Landing page đại lý ô tô
 
-## Getting Started
+Landing page đại lý ủy quyền BMW: Next.js 16 (App Router) · Tailwind CSS 4 ·
+shadcn/ui · Framer Motion (`motion`) · lucide-react. Tông màu xanh–trắng theo
+nhận diện BMW, kèm dải màu BMW M làm điểm nhấn.
 
-First, run the development server:
+## Chạy dự án
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build      # build production
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cấu trúc trang
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Đường dẫn | Nội dung |
+| --- | --- |
+| `/` | Hero carousel, dải sản phẩm, lý do chọn, banner parallax, dịch vụ, cảm nhận khách hàng, form lái thử, tin tức, FAQ, Google Map |
+| `/xe` | Bảng giá toàn bộ dòng xe + bảng giá chi tiết theo phiên bản |
+| `/xe/[slug]` | Chi tiết dòng xe: gallery, màu ngoại thất, điểm nổi bật, phiên bản & giá, thông số kỹ thuật, xe liên quan |
+| `/lai-thu` | Trang đăng ký lái thử (nhận `?xe=<slug>` để chọn sẵn dòng xe) |
+| `/khuyen-mai` | Chương trình ưu đãi theo dòng xe |
+| `/tin-tuc` | Danh sách tin, lọc theo chuyên mục |
+| `/tin-tuc/[slug]` | Chi tiết bài viết + sidebar form lái thử + bài liên quan |
+| `/lien-he` | Thông tin phòng ban, bản đồ, form liên hệ |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ngoài ra có `sitemap.xml`, `robots.txt` và trang 404 tùy biến.
 
-## Learn More
+## Nơi cần chỉnh khi triển khai thật
 
-To learn more about Next.js, take a look at the following resources:
+1. **`src/data/site.ts`** — tên đại lý, hotline, số Zalo, email, địa chỉ,
+   `mapEmbedSrc` / `mapDirectionsHref` (Google Maps, không cần API key), link mạng xã hội, `url` (dùng cho SEO/sitemap).
+   > Bản đồ hiện đang trỏ tới một địa chỉ mẫu ở Nguyễn Văn Linh, Q.7 — cần thay bằng địa chỉ thật của đại lý.
+2. **`src/data/cars.ts`** — dòng xe, giá, phiên bản, thông số, màu sắc.
+3. **`src/data/news.ts`** — bài viết (nội dung dạng block: `paragraph`, `heading`, `list`, `quote`, `image`).
+4. **`public/images/`** — xem `public/images/README.md` để biết đường dẫn từng ảnh.
+5. **`src/app/actions/test-drive.ts`** — hiện chỉ `console.info` dữ liệu form.
+   Nối vào CRM / email / Google Sheet của đại lý tại đây.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ảnh
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Ảnh chưa có sẽ tự động hiển thị ảnh giữ chỗ nền xanh BMW (component
+`SmartImage`), nên trang luôn hiển thị chỉnh chu ngay cả khi thiếu file. Chỉ cần
+copy ảnh thật vào đúng đường dẫn trong `public/images/` là ảnh tự hiện lên.
 
-## Deploy on Vercel
+## Widget liên hệ nổi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`src/components/floating-contact.tsx`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Desktop: hai nút tròn Zalo + Hotline, hiện nhãn khi rê chuột, kèm nút cuộn lên đầu trang.
+- Mobile: một nút chính mở danh sách Zalo / Hotline / Đăng ký lái thử.
