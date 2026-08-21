@@ -49,23 +49,13 @@ export function SiteLogo({
         priority={priority}
         className="size-10 shrink-0"
       />
-      <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-heading text-[15px] font-semibold tracking-[0.22em] uppercase",
-            invert ? "text-white" : "text-foreground",
-          )}
-        >
-          Sài Gòn
-        </span>
-        <span
-          className={cn(
-            "mt-1 text-[10px] tracking-[0.14em] uppercase",
-            invert ? "text-white/65" : "text-muted-foreground",
-          )}
-        >
-          Đại lý ủy quyền
-        </span>
+      <span
+        className={cn(
+          "font-heading text-[17px] leading-none font-semibold tracking-[0.22em] uppercase",
+          invert ? "text-white" : "text-foreground",
+        )}
+      >
+        Sài Gòn
       </span>
     </span>
   );

@@ -42,14 +42,9 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-3">
               <BmwRoundel variant="white" className="size-11" />
-              <div>
-                <p className="font-heading text-sm font-semibold tracking-[0.22em] text-white uppercase">
-                  Sài Gòn
-                </p>
-                <p className="mt-1 text-[10px] tracking-[0.14em] uppercase">
-                  Đại lý ủy quyền
-                </p>
-              </div>
+              <p className="font-heading text-base font-semibold tracking-[0.22em] text-white uppercase">
+                Sài Gòn
+              </p>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed">
               {site.description}
