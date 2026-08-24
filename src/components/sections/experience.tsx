@@ -47,16 +47,18 @@ export function ExperienceBanner() {
           className="object-cover"
         />
       </motion.div>
-      <div className="absolute inset-0 -z-10 bg-linear-to-t from-bmw-950 via-bmw-950/75 to-bmw-950/45" />
+      {/* Lớp phủ đã giảm để lộ rõ chiếc xe; bù lại toàn bộ chữ trong khối để
+          trắng đặc (không dùng white/xx) nên vẫn đủ tương phản trên nền sáng. */}
+      <div className="absolute inset-0 -z-10 bg-linear-to-t from-bmw-950/95 via-bmw-950/60 to-bmw-950/30" />
 
       <motion.div style={{ opacity }} className="container-page relative text-center">
-        <span className="text-[11px] font-semibold tracking-[0.24em] text-bmw-sky uppercase">
+        <span className="text-[11px] font-semibold tracking-[0.24em] text-white uppercase">
           Sheer Driving Pleasure
         </span>
         <h2 className="font-heading text-balance-heading mx-auto mt-5 max-w-4xl text-4xl leading-[1.08] font-bold text-white sm:text-5xl lg:text-6xl">
           Niềm vui thuần khiết sau tay lái
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-white/70 sm:text-base">
+        <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-relaxed text-white sm:text-base">
           Hơn một thế kỷ, BMW theo đuổi duy nhất một điều: biến mỗi hành trình
           thành một trải nghiệm đáng nhớ. Đó là sự cân bằng chính xác giữa kỹ
           thuật đỉnh cao, thiết kế tinh tế và cảm xúc thật sau vô-lăng.
@@ -68,7 +70,7 @@ export function ExperienceBanner() {
               <p className="font-heading text-3xl font-bold text-white sm:text-4xl">
                 {p.value}
               </p>
-              <p className="mx-auto mt-2 max-w-[24ch] text-[13px] leading-snug text-white/60">
+              <p className="mx-auto mt-2 max-w-[24ch] text-[13px] leading-snug text-white">
                 {p.label}
               </p>
             </div>

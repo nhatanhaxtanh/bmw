@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ArrowRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,18 @@ import { SmartImage } from "@/components/smart-image";
 import { formatVndShort } from "@/data/cars";
 import { cn } from "@/lib/utils";
 
-const slides = [
+type Slide = {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  price: number;
+  image: string;
+  video?: string;
+};
+
+const slides: Slide[] = [
   {
     slug: "bmw-5-series",
     eyebrow: "Hoàn toàn mới",
@@ -20,6 +31,9 @@ const slides = [
       "BMW Interaction Bar, công nghệ Mild Hybrid 48V và Highway Assistant — thế hệ thứ tám đưa chuẩn mực xe sang lên một tầm cao mới.",
     price: 2_499_000_000,
     image: "/images/hero/hero-5-series.jpg",
+    // Slide có `video` sẽ chạy clip nền; `image` đóng vai trò poster và là
+    // ảnh dự phòng khi người dùng bật "giảm chuyển động".
+    video: "/videos/hero-5-series.mp4",
   },
   {
     slug: "bmw-x7",
@@ -44,53 +58,76 @@ const slides = [
 ];
 
 const AUTOPLAY_MS = 7000;
+/** Slide có clip nền ở lại lâu hơn để chạy hết đoạn phim (clip dài 14 giây). */
+const VIDEO_AUTOPLAY_MS = 14000;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const go = useCallback((next: number) => {
     setIndex((next + slides.length) % slides.length);
   }, []);
 
-  useEffect(() => {
-    if (paused) return;
-    const t = setTimeout(() => go(index + 1), AUTOPLAY_MS);
-    return () => clearTimeout(t);
-  }, [index, paused, go]);
-
   const slide = slides[index];
+  const showVideo = !!slide.video && !reduceMotion;
+  const durationMs = showVideo ? VIDEO_AUTOPLAY_MS : AUTOPLAY_MS;
+
+  useEffect(() => {
+    const t = setTimeout(() => go(index + 1), durationMs);
+    return () => clearTimeout(t);
+  }, [index, go, durationMs]);
 
   return (
-    <section
-      className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-bmw-950 pt-24 pb-16 sm:min-h-screen sm:pb-20"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Ảnh nền */}
+    <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-bmw-950 pt-24 pb-16 sm:min-h-screen sm:pb-20">
+      {/* Nền: clip nếu slide có video, còn lại là ảnh tĩnh */}
       <AnimatePresence mode="sync">
         <motion.div
           key={slide.slug}
           className="absolute inset-0 -z-20"
-          initial={{ opacity: 0, scale: 1.08 }}
+          // Slide ảnh có hiệu ứng Ken Burns (phóng nhẹ); slide video thì không,
+          // vì bản thân đoạn phim đã có chuyển động máy quay riêng.
+          initial={{ opacity: 0, scale: showVideo ? 1 : 1.08 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 0.9 }, scale: { duration: 8, ease: "linear" } }}
+          transition={{
+            opacity: { duration: 0.9 },
+            scale: { duration: 8, ease: "linear" },
+          }}
         >
-          <SmartImage
-            src={slide.image}
-            alt={slide.title}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            placeholderLabel={`Ảnh hero — ${slide.title}`}
-            className="object-cover"
-          />
+          {showVideo ? (
+            <video
+              key={slide.video}
+              src={slide.video}
+              poster={slide.image}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload={index === 0 ? "auto" : "metadata"}
+              aria-hidden
+              className="size-full object-cover"
+            />
+          ) : (
+            <SmartImage
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              placeholderLabel={`Ảnh hero — ${slide.title}`}
+              className="object-cover"
+            />
+          )}
         </motion.div>
       </AnimatePresence>
 
-      {/* Lớp phủ gradient */}
-      <div className="absolute inset-0 -z-10 bg-linear-to-r from-bmw-950/92 via-bmw-950/70 to-bmw-950/25" />
+      {/* Lớp phủ gradient đen — tối bên trái để chữ trắng đọc rõ trên cả những
+          slide nền sáng (X7 nền sa mạc, các cảnh nội thất trong clip 5 Series),
+          nhạt dần sang phải để không làm chìm chiếc xe. */}
+      <div className="absolute inset-0 -z-10 bg-linear-to-r from-black/70 via-black/40 to-black/5" />
+      {/* Dải mờ đáy giữ màu bmw-950 (đã thử đen nhưng lộ đường ranh cứng với
+          khối StatsBand nền bmw-900 ngay bên dưới). */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-linear-to-t from-bmw-950 to-transparent" />
 
       <div className="container-page relative w-full">
@@ -168,7 +205,7 @@ export function Hero() {
                       initial={{ width: i === index ? "0%" : "0%" }}
                       animate={{ width: i === index ? "100%" : "0%" }}
                       transition={{
-                        duration: i === index && !paused ? AUTOPLAY_MS / 1000 : 0.3,
+                        duration: i === index ? durationMs / 1000 : 0.3,
                         ease: "linear",
                       }}
                     />
