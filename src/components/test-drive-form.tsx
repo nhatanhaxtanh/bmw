@@ -23,8 +23,7 @@ import { cars } from "@/data/cars";
 import { cn } from "@/lib/utils";
 
 const branches = [
-  "Showroom Quận 7 (Nguyễn Văn Linh)",
-  "Showroom Quận 2 (Mai Chí Thọ)",
+  "Showroom Phú Nhuận (80 Nguyễn Văn Trỗi)",
   "Lái thử tận nơi theo yêu cầu",
 ];
 
@@ -128,7 +127,13 @@ export function TestDriveForm({
       className={cn("space-y-5", className)}
       noValidate
     >
-      <div className={cn("grid gap-5", compact ? "" : "sm:grid-cols-2")}>
+      {/* grid-cols-1 = minmax(0,1fr): bắt buộc phải có, nếu không cột grid ngầm sẽ
+          tự giãn theo min-content của ô rộng nhất (SelectTrigger có
+          whitespace-nowrap nên min-content bằng cả chuỗi "Showroom Phú Nhuận
+          (80 Nguyễn Văn Trỗi)"), làm mọi field tràn ra ngoài form ở cột hẹp. */}
+      <div
+        className={cn("grid grid-cols-1 gap-5", compact ? "" : "sm:grid-cols-2")}
+      >
         <div className="space-y-2">
           <Label htmlFor={`${uid}-name`}>
             Họ và tên <span className="text-destructive">*</span>

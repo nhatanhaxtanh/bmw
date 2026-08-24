@@ -37,7 +37,8 @@ export function SiteFooter() {
       />
       <div className="m-stripe h-1 w-full" />
 
-      <div className="container-page relative py-16">
+      {/* pb lớn hơn trên mobile để dòng cuối không bị nút liên hệ nổi che */}
+      <div className="container-page relative pt-16 pb-28 sm:pb-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-3">
@@ -146,7 +147,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {site.legalName}. Bảo lưu mọi quyền.
           </p>
-          <p className="text-center md:text-right">
+          <p className="text-center md:pr-20 md:text-right">
             Hình ảnh và thông số mang tính tham khảo, có thể thay đổi tùy phiên bản
             và thời điểm.
           </p>

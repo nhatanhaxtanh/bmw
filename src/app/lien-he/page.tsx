@@ -23,8 +23,8 @@ const departments = [
   {
     title: "Xưởng dịch vụ",
     lines: ["Đặt lịch bảo dưỡng, sửa chữa, kiểm tra định kỳ"],
-    phone: "0901 234 568",
-    href: "tel:+84901234568",
+    phone: site.hotline,
+    href: site.hotlineHref,
   },
   {
     title: "Cứu hộ 24/7",

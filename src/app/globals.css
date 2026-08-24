@@ -172,9 +172,16 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "cv01";
+    overflow-x: clip;
   }
   html {
     @apply font-sans scroll-smooth;
+    /* Các khối Reveal trượt ngang (direction left/right) bắt đầu ở vị trí lệch
+       32px so với mép màn hình, gây thanh cuộn ngang trên mobile. `clip` chặn
+       cuộn ngang mà không tạo scroll container nên `position: sticky` của header
+       vẫn hoạt động (khác với `overflow: hidden`). Cần đặt trên cả html và body:
+       riêng html không đủ vì Chrome vẫn cho viewport cuộn ngang. */
+    overflow-x: clip;
   }
   ::selection {
     background: var(--color-bmw-700);

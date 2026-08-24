@@ -32,7 +32,7 @@ Ngoài ra có `sitemap.xml`, `robots.txt` và trang 404 tùy biến.
 
 1. **`src/data/site.ts`** — tên đại lý, hotline, số Zalo, email, địa chỉ,
    `mapEmbedSrc` / `mapDirectionsHref` (Google Maps, không cần API key), link mạng xã hội, `url` (dùng cho SEO/sitemap).
-   > Bản đồ hiện đang trỏ tới một địa chỉ mẫu ở Nguyễn Văn Linh, Q.7 — cần thay bằng địa chỉ thật của đại lý.
+   > Bản đồ đang trỏ tới 80 Nguyễn Văn Trỗi, Phường 8, Q. Phú Nhuận, TP.HCM.
 2. **`src/data/cars.ts`** — dòng xe, giá, phiên bản, thông số, màu sắc.
 3. **`src/data/news.ts`** — bài viết (nội dung dạng block: `paragraph`, `heading`, `list`, `quote`, `image`).
 4. **`public/images/`** — xem `public/images/README.md` để biết đường dẫn từng ảnh.
