@@ -10,11 +10,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SmartImage } from "@/components/smart-image";
 import { cars, formatVndShortOrContact } from "@/data/cars";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Chương trình khuyến mãi BMW",
   description:
     "Hỗ trợ tới 100% lệ phí trước bạ, tặng gói bảo dưỡng 3 năm và bảo hiểm vật chất năm đầu cho loạt xe BMW. Ưu đãi áp dụng có giới hạn.",
+  alternates: { canonical: "/khuyen-mai" },
 };
 
 const promos = [
@@ -70,6 +73,9 @@ export default function PromotionsPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([{ name: "Khuyến mãi", path: "/khuyen-mai" }])}
+      />
       <PageHero
         eyebrow="Ưu đãi"
         title="Chương trình khuyến mãi tháng này"

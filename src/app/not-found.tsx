@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CarFront } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { BmwRoundel } from "@/components/bmw-logo";
+
+export const metadata: Metadata = {
+  title: "Không tìm thấy trang",
+  description: "Đường dẫn không tồn tại hoặc nội dung đã được gỡ bỏ.",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

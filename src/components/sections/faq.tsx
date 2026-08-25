@@ -7,7 +7,8 @@ import {
 import { Reveal } from "@/components/motion/reveal";
 import { site } from "@/data/site";
 
-const faqs = [
+/** Dùng lại cho structured data FAQPage ở trang chủ. */
+export const faqs = [
   {
     q: "Thủ tục mua xe BMW trả góp cần những giấy tờ gì?",
     a: "Với khách hàng cá nhân: CCCD, sổ hộ khẩu hoặc giấy xác nhận cư trú, giấy đăng ký kết hôn (nếu có) và chứng minh thu nhập (sao kê lương, hợp đồng lao động hoặc giấy tờ tài sản). Với doanh nghiệp: giấy phép kinh doanh, báo cáo tài chính hai năm gần nhất và sao kê tài khoản công ty. Đội ngũ của chúng tôi sẽ hỗ trợ hoàn thiện toàn bộ hồ sơ.",

@@ -37,7 +37,9 @@ export function PageHero({
         <>
           <SmartImage
             src={image}
-            alt={title}
+            // `imageLabel` mô tả nội dung ảnh; `title` chỉ là phương án dự phòng
+            // vì trùng nguyên văn với <h1> ngay bên dưới.
+            alt={imageLabel ?? title}
             fill
             priority
             sizes="100vw"

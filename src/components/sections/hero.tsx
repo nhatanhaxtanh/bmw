@@ -111,7 +111,7 @@ export function Hero() {
           ) : (
             <SmartImage
               src={slide.image}
-              alt={slide.title}
+              alt={`${slide.title} — ${slide.subtitle}`}
               fill
               priority={index === 0}
               sizes="100vw"

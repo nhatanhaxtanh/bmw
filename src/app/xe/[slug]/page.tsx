@@ -13,6 +13,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cars, formatVndOrContact, formatVndShortOrContact, getCar } from "@/data/cars";
 import { site } from "@/data/site";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbSchema, carSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return cars.map((car) => ({ slug: car.slug }));
@@ -30,7 +32,13 @@ export async function generateMetadata({
     description: `${car.name}: ${car.tagline}. Giá từ ${formatVndShortOrContact(
       car.priceFrom,
     )}. Xem thông số kỹ thuật đầy đủ và đăng ký lái thử miễn phí tại ${site.name}.`,
-    openGraph: { title: car.name, description: car.tagline },
+    alternates: { canonical: `/xe/${car.slug}` },
+    openGraph: {
+      type: "website",
+      url: `${site.url}/xe/${car.slug}`,
+      title: car.name,
+      description: car.tagline,
+    },
   };
 }
 
@@ -43,6 +51,15 @@ export default async function CarDetailPage({ params }: PageProps<"/xe/[slug]">)
 
   return (
     <>
+      <JsonLd
+        data={[
+          carSchema(car),
+          breadcrumbSchema([
+            { name: "Dòng xe", path: "/xe" },
+            { name: car.name, path: `/xe/${car.slug}` },
+          ]),
+        ]}
+      />
       <PageHero
         eyebrow={car.series}
         title={car.name}

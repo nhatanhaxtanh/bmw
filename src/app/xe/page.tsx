@@ -6,17 +6,26 @@ import { Faq } from "@/components/sections/faq";
 import { TestDriveCta } from "@/components/sections/test-drive-cta";
 import { cars, formatVndOrContact } from "@/data/cars";
 import { Reveal } from "@/components/motion/reveal";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbSchema, carListSchema } from "@/lib/schema";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Bảng giá xe BMW mới nhất",
   description:
     "Cập nhật bảng giá niêm yết toàn bộ dòng xe BMW: 3 Series, 5 Series, 7 Series, X3, X5, X7, i4, iX3 và BMW M tại đại lý ủy quyền chính hãng.",
+  alternates: { canonical: "/xe" },
 };
 
 export default function CarsPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([{ name: "Dòng xe", path: "/xe" }]),
+          carListSchema(cars),
+        ]}
+      />
       <PageHero
         eyebrow="Dòng xe"
         title="Bảng giá xe BMW chính hãng"

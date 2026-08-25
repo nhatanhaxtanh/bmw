@@ -14,6 +14,8 @@ import { Separator } from "@/components/ui/separator";
 import { TestDriveForm } from "@/components/test-drive-form";
 import { formatDate, getArticle, news, type NewsBlock } from "@/data/news";
 import { site } from "@/data/site";
+import { JsonLd } from "@/components/json-ld";
+import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return news.map((a) => ({ slug: a.slug }));
@@ -29,11 +31,16 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `/tin-tuc/${article.slug}` },
     openGraph: {
       type: "article",
+      url: `${site.url}/tin-tuc/${article.slug}`,
       title: article.title,
       description: article.excerpt,
       publishedTime: article.date,
+      modifiedTime: article.date,
+      section: article.category,
+      tags: [...article.tags],
       authors: [article.author],
     },
   };
@@ -114,6 +121,15 @@ export default async function ArticlePage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleSchema(article),
+          breadcrumbSchema([
+            { name: "Tin tức", path: "/tin-tuc" },
+            { name: article.title, path: `/tin-tuc/${article.slug}` },
+          ]),
+        ]}
+      />
       <PageHero
         eyebrow={article.category}
         title={article.title}
@@ -125,9 +141,12 @@ export default async function ArticlePage({
           <span className="inline-flex items-center gap-2">
             <User className="size-3.5" /> {article.author}
           </span>
-          <span className="inline-flex items-center gap-2">
+          <time
+            dateTime={article.date}
+            className="inline-flex items-center gap-2"
+          >
             <CalendarDays className="size-3.5" /> {formatDate(article.date)}
-          </span>
+          </time>
           <span className="inline-flex items-center gap-2">
             <Clock className="size-3.5" /> {article.readingTime} phút đọc
           </span>

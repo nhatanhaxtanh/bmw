@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { FloatingContact } from "@/components/floating-contact";
 import { Toaster } from "@/components/ui/sonner";
+import { JsonLd } from "@/components/json-ld";
+import { dealerSchema, websiteSchema } from "@/lib/schema";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -50,7 +52,19 @@ export const metadata: Metadata = {
     title: `${site.name} — Đại lý ủy quyền BMW chính hãng`,
     description: site.description,
   },
-  robots: { index: true, follow: true },
+  // Chỉ khai báo `card`; title/description để Next tự lấy theo từng trang.
+  twitter: { card: "summary_large_image" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  formatDetection: { telephone: true },
 };
 
 export const viewport: Viewport = {
@@ -65,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
+        <JsonLd data={[dealerSchema(), websiteSchema()]} />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

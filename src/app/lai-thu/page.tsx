@@ -5,11 +5,14 @@ import { TestDriveCta } from "@/components/sections/test-drive-cta";
 import { LocationSection } from "@/components/google-map";
 import { Faq } from "@/components/sections/faq";
 import { cars } from "@/data/cars";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Đăng ký lái thử xe BMW miễn phí",
   description:
     "Đăng ký lái thử xe BMW miễn phí tận nơi tại TP.HCM. Chọn dòng xe, thời gian và địa điểm — tư vấn viên xác nhận trong vòng 30 phút.",
+  alternates: { canonical: "/lai-thu" },
 };
 
 export default async function TestDrivePage({
@@ -22,6 +25,7 @@ export default async function TestDrivePage({
 
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Lái thử", path: "/lai-thu" }])} />
       <PageHero
         eyebrow="Trải nghiệm"
         title="Đăng ký lái thử miễn phí"

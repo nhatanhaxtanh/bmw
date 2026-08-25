@@ -16,6 +16,12 @@ export const site = {
 
   address: "80 Nguyễn Văn Trỗi, Phường 8, Quận Phú Nhuận, TP. Hồ Chí Minh",
   addressShort: "Q. Phú Nhuận, TP. Hồ Chí Minh",
+  /** Địa chỉ tách thành phần cho structured data (schema.org PostalAddress). */
+  addressParts: {
+    street: "80 Nguyễn Văn Trỗi, Phường 8",
+    district: "Quận Phú Nhuận",
+    city: "TP. Hồ Chí Minh",
+  },
   workingHours: "Thứ 2 – Chủ nhật: 08:00 – 18:00",
 
   // Google Maps — dùng embed không cần API key.

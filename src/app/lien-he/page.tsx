@@ -7,10 +7,13 @@ import { TestDriveForm } from "@/components/test-drive-form";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { site } from "@/data/site";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Liên hệ đại lý",
   description: `Địa chỉ, hotline và bản đồ đường đi tới ${site.name}. Hỗ trợ tư vấn bán hàng, đặt lịch dịch vụ và cứu hộ 24/7.`,
+  alternates: { canonical: "/lien-he" },
 };
 
 const departments = [
@@ -37,6 +40,7 @@ const departments = [
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([{ name: "Liên hệ", path: "/lien-he" }])} />
       <PageHero
         eyebrow="Liên hệ"
         title="Chúng tôi luôn sẵn sàng phục vụ"
