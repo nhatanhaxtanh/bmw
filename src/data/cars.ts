@@ -7,7 +7,8 @@ export type CarCategory =
 
 export type Variant = {
   name: string;
-  price: number; // VND
+  /** Bỏ trống khi hãng chưa công bố giá — giao diện hiển thị "Liên hệ". */
+  price?: number; // VND
   engine: string;
   power: string;
   highlight?: string;
@@ -25,7 +26,8 @@ export type Car = {
   category: CarCategory[];
   tagline: string;
   description: string;
-  priceFrom: number;
+  /** Bỏ trống khi hãng chưa công bố giá — giao diện hiển thị "Liên hệ". */
+  priceFrom?: number;
   badge?: string;
   isNew?: boolean;
   /** Ảnh sản phẩm — thay bằng ảnh thật trong /public/images/cars/... */
@@ -968,6 +970,280 @@ export const cars: Car[] = [
     ],
   },
   {
+    slug: "bmw-m2",
+    name: "BMW M2",
+    series: "BMW M",
+    category: ["m-performance", "coupe"],
+    tagline: "Chiếc M nhỏ nhất, thuần chất nhất",
+    description:
+      "BMW M2 là chiếc xe M cỡ nhỏ cuối cùng còn dẫn động cầu sau thuần tuý và vẫn có tuỳ chọn số sàn sáu cấp. Động cơ S58 mượn từ M3, thân xe ngắn hơn và nhẹ hơn — công thức được giới mê lái xem là gần với tinh thần M nguyên bản nhất hiện nay.",
+    priceFrom: vnd(4_099_000_000),
+    badge: "BMW M",
+    image: "/images/cars/bmw-m2/hero-g87.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
+    gallery: [
+      "/images/cars/bmw-m2/gallery-1.jpg",
+      "/images/cars/bmw-m2/gallery-2.jpg",
+      "/images/cars/bmw-m2/gallery-3.jpg",
+      "/images/cars/bmw-m2/gallery-4.jpg",
+    ],
+    quickSpecs: [
+      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Công suất", value: "480 mã lực" },
+      { label: "Tăng tốc 0–100", value: "4,1 giây" },
+      { label: "Số chỗ", value: "4 chỗ" },
+    ],
+    highlights: [
+      {
+        title: "Cầu sau thuần tuý",
+        description:
+          "Không có tuỳ chọn dẫn động bốn bánh — toàn bộ 480 mã lực dồn về cầu sau, đúng chất M cổ điển.",
+      },
+      {
+        title: "Vẫn còn số sàn",
+        description:
+          "Hộp số sàn sáu cấp là tuỳ chọn không mất thêm chi phí, thứ gần như đã tuyệt chủng ở phân khúc này.",
+      },
+      {
+        title: "Động cơ S58",
+        description:
+          "Cùng khối máy sáu xy-lanh tăng áp kép của M3, đặt trong thân xe ngắn hơn 220 mm và nhẹ hơn.",
+      },
+    ],
+    variants: [
+      {
+        name: "M2 Coupé",
+        price: vnd(4_099_000_000),
+        engine: "3.0L S58 TwinPower TwinTurbo",
+        power: "480 mã lực / 600 Nm",
+        highlight: "Phiên bản phân phối chính hãng",
+      },
+    ],
+    specs: [
+      {
+        group: "Động cơ & vận hành",
+        items: [
+          { label: "Loại động cơ", value: "6 xy-lanh thẳng hàng S58, tăng áp kép" },
+          { label: "Dung tích", value: "2.993 cc" },
+          { label: "Công suất tối đa", value: "480 mã lực" },
+          { label: "Mô-men xoắn", value: "600 Nm" },
+          { label: "Hộp số", value: "M Steptronic 8 cấp hoặc số sàn 6 cấp" },
+          { label: "Dẫn động", value: "Cầu sau (RWD)" },
+          { label: "Tăng tốc 0–100 km/h", value: "4,1 giây" },
+          { label: "Tốc độ tối đa", value: "250 km/h (285 km/h với gói M Driver)" },
+        ],
+      },
+      {
+        group: "Kích thước & khối lượng",
+        items: [
+          { label: "Dài × Rộng × Cao", value: "4.580 × 1.887 × 1.403 mm" },
+          { label: "Chiều dài cơ sở", value: "2.747 mm" },
+          { label: "Khoang hành lý", value: "390 lít" },
+          { label: "Dung tích bình nhiên liệu", value: "52 lít" },
+        ],
+      },
+      {
+        group: "Tiện nghi & an toàn",
+        items: [
+          { label: "Màn hình", value: "BMW Curved Display 12,3\" + 14,9\"" },
+          { label: "Ghế", value: "Ghế thể thao M, tuỳ chọn ghế bucket carbon" },
+          { label: "Phanh", value: "M Compound, tuỳ chọn M Carbon Ceramic" },
+          { label: "Chế độ lái", value: "M Setup, M Drive Professional, M Traction Control 10 cấp" },
+        ],
+      },
+    ],
+    colors: [
+      { name: "Alpine White", hex: "#f1f2f4" },
+      { name: "Black Sapphire", hex: "#14161a" },
+      { name: "Zandvoort Blue", hex: "#2b4d8f" },
+      { name: "Toronto Red", hex: "#8c1a20" },
+    ],
+  },
+  {
+    slug: "bmw-m3",
+    name: "BMW M3",
+    series: "BMW M",
+    category: ["m-performance", "sedan"],
+    tagline: "Sedan hiệu năng cao kinh điển",
+    description:
+      "BMW M3 Competition M xDrive gói trọn 530 mã lực vào thân xe sedan bốn cửa dùng được hằng ngày. Dẫn động bốn bánh M xDrive có thể chuyển hoàn toàn về cầu sau, khung gầm và hệ thống làm mát phát triển riêng cho đường đua.",
+    priceFrom: vnd(4_999_000_000),
+    badge: "BMW M",
+    image: "/images/cars/bmw-m3/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
+    gallery: [
+      "/images/cars/bmw-m3/gallery-1.jpg",
+      "/images/cars/bmw-m3/gallery-2.jpg",
+      "/images/cars/bmw-m3/gallery-3.jpg",
+      "/images/cars/bmw-m3/gallery-4.jpg",
+    ],
+    quickSpecs: [
+      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Công suất", value: "530 mã lực" },
+      { label: "Tăng tốc 0–100", value: "3,5 giây" },
+      { label: "Số chỗ", value: "5 chỗ" },
+    ],
+    highlights: [
+      {
+        title: "M xDrive chuyển được về 2WD",
+        description:
+          "Ba chế độ 4WD, 4WD Sport và 2WD — tắt hẳn cầu trước và cả kiểm soát lực kéo khi muốn drift.",
+      },
+      {
+        title: "530 mã lực nhưng bốn cửa",
+        description:
+          "Hiệu năng ngang siêu xe trong thân xe sedan có cốp 480 lít và ghế sau đủ rộng cho gia đình.",
+      },
+      {
+        title: "M Drive Professional",
+        description:
+          "Bộ chế độ đường đua kèm M Drift Analyser và M Laptimer, ghi lại từng vòng chạy.",
+      },
+    ],
+    variants: [
+      {
+        name: "M3 Competition M xDrive",
+        price: vnd(4_999_000_000),
+        engine: "3.0L S58 TwinPower TwinTurbo",
+        power: "530 mã lực / 650 Nm",
+        highlight: "Phiên bản phân phối chính hãng",
+      },
+    ],
+    specs: [
+      {
+        group: "Động cơ & vận hành",
+        items: [
+          { label: "Loại động cơ", value: "6 xy-lanh thẳng hàng S58, tăng áp kép" },
+          { label: "Dung tích", value: "2.993 cc" },
+          { label: "Công suất tối đa", value: "530 mã lực" },
+          { label: "Mô-men xoắn", value: "650 Nm" },
+          { label: "Hộp số", value: "M Steptronic 8 cấp" },
+          { label: "Dẫn động", value: "M xDrive, chuyển được về cầu sau" },
+          { label: "Tăng tốc 0–100 km/h", value: "3,5 giây" },
+          { label: "Tốc độ tối đa", value: "250 km/h (290 km/h với gói M Driver)" },
+        ],
+      },
+      {
+        group: "Kích thước & khối lượng",
+        items: [
+          { label: "Dài × Rộng × Cao", value: "4.801 × 1.903 × 1.441 mm" },
+          { label: "Chiều dài cơ sở", value: "2.857 mm" },
+          { label: "Khoang hành lý", value: "480 lít" },
+          { label: "Dung tích bình nhiên liệu", value: "59 lít" },
+        ],
+      },
+      {
+        group: "Tiện nghi & an toàn",
+        items: [
+          { label: "Màn hình", value: "BMW Curved Display 12,3\" + 14,9\"" },
+          { label: "Ghế", value: "Ghế bucket M Carbon" },
+          { label: "Phanh", value: "M Compound, tuỳ chọn M Carbon Ceramic" },
+          { label: "Chế độ lái", value: "M Drive Professional, M Traction Control 10 cấp" },
+        ],
+      },
+    ],
+    colors: [
+      { name: "Alpine White", hex: "#f1f2f4" },
+      { name: "Black Sapphire", hex: "#14161a" },
+      { name: "Isle of Man Green", hex: "#1f3a2e" },
+      { name: "Toronto Red", hex: "#8c1a20" },
+    ],
+  },
+  {
+    slug: "bmw-m3-touring",
+    name: "BMW M3 Touring",
+    series: "BMW M",
+    category: ["m-performance", "sedan"],
+    tagline: "Wagon 530 mã lực, chở được cả gia đình",
+    description:
+      "M3 Touring là chiếc M3 phiên bản wagon đầu tiên trong lịch sử BMW M. Vẫn 530 mã lực và khung gầm M xDrive như bản sedan, nhưng khoang hành lý mở rộng tới 1.510 lít — chiếc xe đua đường trường mà vẫn chở trọn hành lý cả nhà.",
+    priceFrom: vnd(5_389_000_000),
+    badge: "BMW M",
+    isNew: true,
+    image: "/images/cars/bmw-m3-touring/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
+    gallery: [
+      "/images/cars/bmw-m3-touring/gallery-1.jpg",
+      "/images/cars/bmw-m3-touring/gallery-2.jpg",
+      "/images/cars/bmw-m3-touring/gallery-3.jpg",
+      "/images/cars/bmw-m3-touring/gallery-4.jpg",
+    ],
+    quickSpecs: [
+      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Công suất", value: "530 mã lực" },
+      { label: "Tăng tốc 0–100", value: "3,6 giây" },
+      { label: "Khoang hành lý", value: "500 – 1.510 lít" },
+    ],
+    highlights: [
+      {
+        title: "M3 wagon đầu tiên",
+        description:
+          "Sau gần 40 năm, BMW M lần đầu làm bản Touring cho M3 — và bán chạy tới mức luôn trong tình trạng chờ xe.",
+      },
+      {
+        title: "1.510 lít khi gập ghế",
+        description:
+          "Cửa cốp điện, kính sau mở riêng, ray cố định hành lý — thực dụng như một chiếc wagon thường.",
+      },
+      {
+        title: "Nhanh gần bằng bản sedan",
+        description:
+          "Nặng hơn khoảng 85 kg nhưng chỉ chậm hơn 0,1 giây khi tăng tốc 0–100 km/h.",
+      },
+    ],
+    variants: [
+      {
+        name: "M3 Touring Competition M xDrive",
+        price: vnd(5_389_000_000),
+        engine: "3.0L S58 TwinPower TwinTurbo",
+        power: "530 mã lực / 650 Nm",
+        highlight: "Phiên bản phân phối chính hãng",
+      },
+    ],
+    specs: [
+      {
+        group: "Động cơ & vận hành",
+        items: [
+          { label: "Loại động cơ", value: "6 xy-lanh thẳng hàng S58, tăng áp kép" },
+          { label: "Dung tích", value: "2.993 cc" },
+          { label: "Công suất tối đa", value: "530 mã lực" },
+          { label: "Mô-men xoắn", value: "650 Nm" },
+          { label: "Hộp số", value: "M Steptronic 8 cấp" },
+          { label: "Dẫn động", value: "M xDrive, chuyển được về cầu sau" },
+          { label: "Tăng tốc 0–100 km/h", value: "3,6 giây" },
+          { label: "Tốc độ tối đa", value: "250 km/h (280 km/h với gói M Driver)" },
+        ],
+      },
+      {
+        group: "Kích thước & khối lượng",
+        items: [
+          { label: "Dài × Rộng × Cao", value: "4.794 × 1.903 × 1.436 mm" },
+          { label: "Chiều dài cơ sở", value: "2.857 mm" },
+          { label: "Khoang hành lý", value: "500 – 1.510 lít" },
+          { label: "Dung tích bình nhiên liệu", value: "59 lít" },
+        ],
+      },
+      {
+        group: "Tiện nghi & an toàn",
+        items: [
+          { label: "Màn hình", value: "BMW Curved Display 12,3\" + 14,9\"" },
+          { label: "Cốp", value: "Cửa cốp điện, kính sau mở riêng" },
+          { label: "Ghế", value: "Ghế thể thao M, tuỳ chọn bucket M Carbon" },
+          { label: "Chế độ lái", value: "M Drive Professional, M Traction Control 10 cấp" },
+        ],
+      },
+    ],
+    colors: [
+      { name: "Alpine White", hex: "#f1f2f4" },
+      { name: "Black Sapphire", hex: "#14161a" },
+      { name: "Isle of Man Green", hex: "#1f3a2e" },
+      { name: "Skyscraper Grey", hex: "#7c8288" },
+    ],
+  },
+  {
     slug: "bmw-x1",
     name: "BMW X1",
     series: "Series X",
@@ -1602,6 +1878,16 @@ export function getCar(slug: string) {
 
 export function formatVnd(value: number) {
   return new Intl.NumberFormat("vi-VN").format(value) + " ₫";
+}
+
+/** Giá rút gọn, trả "Liên hệ" cho xe chưa công bố giá. */
+export function formatVndShortOrContact(value?: number) {
+  return value == null ? "Liên hệ" : formatVndShort(value);
+}
+
+/** Giá đầy đủ, trả "Liên hệ" cho xe chưa công bố giá. */
+export function formatVndOrContact(value?: number) {
+  return value == null ? "Liên hệ" : formatVnd(value);
 }
 
 export function formatVndShort(value: number) {

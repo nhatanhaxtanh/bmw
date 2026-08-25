@@ -4,7 +4,7 @@ import { ArrowUpRight, Gauge, Timer, Users, Zap } from "lucide-react";
 import { SmartImage } from "@/components/smart-image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { formatVndShort, type Car } from "@/data/cars";
+import { formatVndShortOrContact, type Car } from "@/data/cars";
 import { cn } from "@/lib/utils";
 
 const specIcons = [Zap, Gauge, Timer, Users];
@@ -102,9 +102,11 @@ export function CarCard({ car, className }: { car: Car; className?: string }) {
 
         <div className="mt-6 flex items-end justify-between gap-3 border-t border-border pt-5">
           <div>
-            <p className="text-[11px] text-muted-foreground">Giá từ</p>
+            <p className="text-[11px] text-muted-foreground">
+              {car.priceFrom == null ? "Giá bán" : "Giá từ"}
+            </p>
             <p className="font-heading text-lg font-semibold text-primary">
-              {formatVndShort(car.priceFrom)}
+              {formatVndShortOrContact(car.priceFrom)}
             </p>
           </div>
           <Button

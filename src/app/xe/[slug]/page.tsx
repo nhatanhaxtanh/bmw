@@ -11,7 +11,7 @@ import { TestDriveCta } from "@/components/sections/test-drive-cta";
 import { LocationSection } from "@/components/google-map";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { cars, formatVnd, formatVndShort, getCar } from "@/data/cars";
+import { cars, formatVndOrContact, formatVndShortOrContact, getCar } from "@/data/cars";
 import { site } from "@/data/site";
 
 export function generateStaticParams() {
@@ -27,7 +27,7 @@ export async function generateMetadata({
 
   return {
     title: `${car.name} — Giá bán, thông số & ưu đãi`,
-    description: `${car.name}: ${car.tagline}. Giá từ ${formatVndShort(
+    description: `${car.name}: ${car.tagline}. Giá từ ${formatVndShortOrContact(
       car.priceFrom,
     )}. Xem thông số kỹ thuật đầy đủ và đăng ký lái thử miễn phí tại ${site.name}.`,
     openGraph: { title: car.name, description: car.tagline },
@@ -54,10 +54,10 @@ export default async function CarDetailPage({ params }: PageProps<"/xe/[slug]">)
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <div className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur">
             <p className="text-[11px] tracking-wide text-white/55 uppercase">
-              Giá niêm yết từ
+              {car.priceFrom == null ? "Giá niêm yết" : "Giá niêm yết từ"}
             </p>
             <p className="font-heading text-2xl font-semibold text-white">
-              {formatVnd(car.priceFrom)}
+              {formatVndOrContact(car.priceFrom)}
             </p>
           </div>
           <Button asChild size="lg" className="h-12 rounded-full px-7">
@@ -219,7 +219,7 @@ export default async function CarDetailPage({ params }: PageProps<"/xe/[slug]">)
                       Giá niêm yết
                     </p>
                     <p className="font-heading mt-0.5 text-xl font-semibold text-primary">
-                      {formatVnd(variant.price)}
+                      {formatVndOrContact(variant.price)}
                     </p>
                     <Button
                       asChild

@@ -9,7 +9,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SmartImage } from "@/components/smart-image";
-import { cars, formatVndShort } from "@/data/cars";
+import { cars, formatVndShortOrContact } from "@/data/cars";
 
 export const metadata: Metadata = {
   title: "Chương trình khuyến mãi BMW",
@@ -143,7 +143,7 @@ export default function PromotionsPage() {
                               Giá từ
                             </p>
                             <p className="font-heading text-lg font-semibold">
-                              {formatVndShort(car.priceFrom)}
+                              {formatVndShortOrContact(car.priceFrom)}
                             </p>
                           </div>
                         ) : null}

@@ -4,7 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { CarLineup } from "@/components/sections/car-lineup";
 import { Faq } from "@/components/sections/faq";
 import { TestDriveCta } from "@/components/sections/test-drive-cta";
-import { cars, formatVnd } from "@/data/cars";
+import { cars, formatVndOrContact } from "@/data/cars";
 import { Reveal } from "@/components/motion/reveal";
 import Link from "next/link";
 
@@ -94,7 +94,7 @@ export default function CarsPage() {
                           {variant.power}
                         </td>
                         <td className="px-5 py-4 text-right font-semibold whitespace-nowrap text-primary">
-                          {formatVnd(variant.price)}
+                          {formatVndOrContact(variant.price)}
                         </td>
                       </tr>
                     )),
