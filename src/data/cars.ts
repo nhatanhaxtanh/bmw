@@ -401,7 +401,7 @@ export const cars: Car[] = [
       "BMW X3 thế hệ mới sở hữu ngôn ngữ thiết kế mạnh mẽ hơn, khoang cabin rộng rãi và hệ dẫn động xDrive thông minh — lựa chọn cân bằng nhất cho gia đình hiện đại vừa cần tiện nghi vừa muốn cảm giác lái thể thao.",
     priceFrom: vnd(2_299_000_000),
     badge: "Bán chạy",
-    image: "/images/cars/bmw-x3/hero.png",
+    image: "/images/cars/bmw-x3/hero-g45.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
     gallery: [
@@ -1057,49 +1057,49 @@ export const cars: Car[] = [
     ],
   },
   {
-    slug: "bmw-430i-coupe",
-    name: "BMW 430i Coupé",
+    slug: "bmw-430i-convertible",
+    name: "BMW 430i Convertible",
     series: "Series 4",
     category: ["coupe"],
-    tagline: "Coupé hai cửa thuần chất lái",
+    tagline: "Mui trần bốn chỗ cho ngày nắng",
     description:
-      "BMW 430i Coupé mang lưới tản nhiệt đứng đặc trưng của dòng 4, thân xe hai cửa thấp và rộng, dẫn động cầu sau — chiếc BMW dành cho người đặt cảm giác lái và thiết kế lên trên tính thực dụng.",
+      "BMW 430i Convertible giữ nguyên tỷ lệ thể thao và dẫn động cầu sau của dòng 4, nhưng thêm bộ mui vải mở điện — chỉ 18 giây là biến chiếc coupé thành xe mui trần, thao tác được ngay khi đang chạy dưới 50 km/h.",
     priceFrom: vnd(3_399_000_000),
-    image: "/images/cars/bmw-430i-coupe/hero.png",
+    image: "/images/cars/bmw-430i-convertible/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
     gallery: [
-      "/images/cars/bmw-430i-coupe/gallery-1.jpg",
-      "/images/cars/bmw-430i-coupe/gallery-2.jpg",
-      "/images/cars/bmw-430i-coupe/gallery-3.jpg",
-      "/images/cars/bmw-430i-coupe/gallery-4.jpg",
+      "/images/cars/bmw-430i-convertible/gallery-1.jpg",
+      "/images/cars/bmw-430i-convertible/gallery-2.jpg",
+      "/images/cars/bmw-430i-convertible/gallery-3.jpg",
+      "/images/cars/bmw-430i-convertible/gallery-4.jpg",
     ],
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "258 mã lực" },
-      { label: "Tăng tốc 0–100", value: "5,8 giây" },
+      { label: "Tăng tốc 0–100", value: "6,2 giây" },
       { label: "Số chỗ", value: "4 chỗ" },
     ],
     highlights: [
       {
+        title: "Mui vải mở 18 giây",
+        description:
+          "Đóng mở hoàn toàn bằng điện, thao tác được khi xe đang chạy tới 50 km/h. Mui đóng lại cách âm gần như một chiếc coupé mui cứng.",
+      },
+      {
+        title: "Air Collar sưởi cổ",
+        description:
+          "Cửa gió ấm đặt trên lưng ghế thổi vào vùng cổ, cùng kính chắn gió sau giúp mở mui thoải mái cả khi trời se lạnh.",
+      },
+      {
         title: "Dẫn động cầu sau",
         description:
-          "Trọng tâm thấp hơn 21 mm so với 3 Series, khung gầm tinh chỉnh riêng cho thân xe coupé.",
-      },
-      {
-        title: "Lưới tản nhiệt đứng",
-        description:
-          "Ngôn ngữ thiết kế gây tranh luận nhưng không thể nhầm lẫn — đặc trưng của dòng 4 hiện đại.",
-      },
-      {
-        title: "Gói M Sport",
-        description:
-          "Treo thể thao M, phanh M Sport, vô lăng và ghế thể thao bọc da Vernasca.",
+          "Khung gầm gia cường bù lại phần cứng vững mất đi khi bỏ mái, giữ trọn cảm giác lái đặc trưng của dòng 4.",
       },
     ],
     variants: [
       {
-        name: "430i M Sport LCI",
+        name: "430i Convertible M Sport LCI",
         price: vnd(3_399_000_000),
         engine: "2.0L TwinPower Turbo",
         power: "258 mã lực / 400 Nm",
@@ -1116,21 +1116,22 @@ export const cars: Car[] = [
           { label: "Mô-men xoắn", value: "400 Nm" },
           { label: "Hộp số", value: "Steptronic Sport 8 cấp" },
           { label: "Dẫn động", value: "Cầu sau (RWD)" },
-          { label: "Tăng tốc 0–100 km/h", value: "5,8 giây" },
+          { label: "Tăng tốc 0–100 km/h", value: "6,2 giây" },
         ],
       },
       {
         group: "Kích thước & khối lượng",
         items: [
-          { label: "Dài × Rộng × Cao", value: "4.768 × 1.852 × 1.383 mm" },
+          { label: "Dài × Rộng × Cao", value: "4.768 × 1.852 × 1.393 mm" },
           { label: "Chiều dài cơ sở", value: "2.851 mm" },
-          { label: "Khoang hành lý", value: "440 lít" },
+          { label: "Khoang hành lý", value: "385 lít (mui đóng) / 300 lít (mui mở)" },
           { label: "Dung tích bình nhiên liệu", value: "59 lít" },
         ],
       },
       {
         group: "Tiện nghi & an toàn",
         items: [
+          { label: "Mui", value: "Mui vải điện, mở trong 18 giây" },
           { label: "Màn hình", value: "BMW Curved Display 12,3\" + 14,9\"" },
           { label: "Âm thanh", value: "Harman Kardon Surround" },
           { label: "Hỗ trợ lái", value: "Driving Assistant, Parking Assistant Plus" },
