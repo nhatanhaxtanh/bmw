@@ -7,24 +7,57 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SmartImage } from "@/components/smart-image";
 import { cn } from "@/lib/utils";
 
+const TABS = [
+  { key: "exterior", label: "Ngoại thất" },
+  { key: "interior", label: "Nội thất" },
+] as const;
+
+type TabKey = (typeof TABS)[number]["key"];
+
 export function CarGallery({
-  images,
+  gallery,
   name,
   className,
 }: {
-  images: string[];
+  gallery: { exterior: string[]; interior: string[] };
   name: string;
   className?: string;
 }) {
+  const [tab, setTab] = useState<TabKey>("exterior");
   const [index, setIndex] = useState(0);
+
+  const images = gallery[tab];
   const go = (n: number) => setIndex((n + images.length) % images.length);
+  const switchTab = (next: TabKey) => {
+    setTab(next);
+    setIndex(0);
+  };
 
   return (
     <div className={cn("space-y-3", className)}>
+      <div className="flex gap-2">
+        {TABS.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            onClick={() => switchTab(t.key)}
+            aria-current={t.key === tab}
+            className={cn(
+              "rounded-full px-4 py-2 text-[13px] font-medium transition-colors",
+              t.key === tab
+                ? "bg-primary text-primary-foreground"
+                : "border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground",
+            )}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
       <div className="group relative aspect-16/10 overflow-hidden rounded-2xl border border-border bg-muted">
         <AnimatePresence mode="wait">
           <motion.div
-            key={index}
+            key={`${tab}-${index}`}
             initial={{ opacity: 0, scale: 1.03 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
@@ -33,10 +66,10 @@ export function CarGallery({
           >
             <SmartImage
               src={images[index]}
-              alt={`${name} — ảnh ${index + 1}`}
+              alt={`${name} — ${tab === "exterior" ? "ngoại thất" : "nội thất"} ${index + 1}`}
               fill
               sizes="(max-width: 1024px) 100vw, 60vw"
-              placeholderLabel={`${name} — ảnh ${index + 1}`}
+              placeholderLabel={`${name} — ${tab === "exterior" ? "Ngoại thất" : "Nội thất"} ${index + 1}`}
               className="object-cover"
             />
           </motion.div>
@@ -64,10 +97,10 @@ export function CarGallery({
         </span>
       </div>
 
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         {images.map((src, i) => (
           <button
-            key={src}
+            key={`${tab}-${src}`}
             type="button"
             onClick={() => setIndex(i)}
             aria-label={`Xem ảnh ${i + 1}`}
@@ -90,42 +123,6 @@ export function CarGallery({
           </button>
         ))}
       </div>
-    </div>
-  );
-}
-
-export function ColorPicker({
-  colors,
-}: {
-  colors: { name: string; hex: string }[];
-}) {
-  const [active, setActive] = useState(0);
-
-  return (
-    <div>
-      <div className="flex flex-wrap gap-3">
-        {colors.map((color, i) => (
-          <button
-            key={color.name}
-            type="button"
-            onClick={() => setActive(i)}
-            title={color.name}
-            aria-label={color.name}
-            aria-current={i === active}
-            className={cn(
-              "relative size-11 rounded-full border-2 transition-transform hover:scale-110",
-              i === active
-                ? "border-primary ring-2 ring-primary/25 ring-offset-2 ring-offset-background"
-                : "border-border",
-            )}
-            style={{ backgroundColor: color.hex }}
-          />
-        ))}
-      </div>
-      <p className="mt-3 text-sm">
-        <span className="text-muted-foreground">Màu đang chọn: </span>
-        <span className="font-medium">{colors[active].name}</span>
-      </p>
     </div>
   );
 }

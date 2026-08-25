@@ -39,7 +39,11 @@ export type Car = {
   imageFit?: "cover" | "contain";
   /** Lớp Tailwind chỉnh riêng ảnh của xe này trong card (đệm, hiệu ứng hover). */
   imageClassName?: string;
-  gallery: string[];
+  /** Ảnh chi tiết chia theo ngoại thất và nội thất. */
+  gallery: {
+    exterior: string[];
+    interior: string[];
+  };
   quickSpecs: { label: string; value: string }[];
   highlights: { title: string; description: string }[];
   variants: Variant[];
@@ -63,12 +67,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-3-series/hero-hd.jpg",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-3-series/gallery-1.jpg",
-      "/images/cars/bmw-3-series/gallery-2.jpg",
-      "/images/cars/bmw-3-series/gallery-3.jpg",
-      "/images/cars/bmw-3-series/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-3-series/ngoai-that-1.jpg",
+        "/images/cars/bmw-3-series/ngoai-that-2.jpg",
+        "/images/cars/bmw-3-series/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-3-series/noi-that-1.jpg",
+        "/images/cars/bmw-3-series/noi-that-2.jpg",
+        "/images/cars/bmw-3-series/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "184 mã lực" },
@@ -176,12 +186,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-5-series/hero.png",
     imageFit: "contain",
     imageClassName: "p-1.5 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-5-series/gallery-1.jpg",
-      "/images/cars/bmw-5-series/gallery-2.jpg",
-      "/images/cars/bmw-5-series/gallery-3.jpg",
-      "/images/cars/bmw-5-series/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-5-series/ngoai-that-1.jpg",
+        "/images/cars/bmw-5-series/ngoai-that-2.jpg",
+        "/images/cars/bmw-5-series/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-5-series/noi-that-1.jpg",
+        "/images/cars/bmw-5-series/noi-that-2.jpg",
+        "/images/cars/bmw-5-series/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "208 mã lực" },
@@ -298,12 +314,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-7-series/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-7-series/gallery-1.jpg",
-      "/images/cars/bmw-7-series/gallery-2.jpg",
-      "/images/cars/bmw-7-series/gallery-3.jpg",
-      "/images/cars/bmw-7-series/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-7-series/ngoai-that-1.jpg",
+        "/images/cars/bmw-7-series/ngoai-that-2.jpg",
+        "/images/cars/bmw-7-series/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-7-series/noi-that-1.jpg",
+        "/images/cars/bmw-7-series/noi-that-2.jpg",
+        "/images/cars/bmw-7-series/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L 6 xy-lanh Turbo" },
       { label: "Công suất", value: "286 – 381 mã lực" },
@@ -406,12 +428,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-x3/hero-g45.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-x3/gallery-1.jpg",
-      "/images/cars/bmw-x3/gallery-2.jpg",
-      "/images/cars/bmw-x3/gallery-3.jpg",
-      "/images/cars/bmw-x3/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x3/ngoai-that-1.jpg",
+        "/images/cars/bmw-x3/ngoai-that-2.jpg",
+        "/images/cars/bmw-x3/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x3/noi-that-1.jpg",
+        "/images/cars/bmw-x3/noi-that-2.jpg",
+        "/images/cars/bmw-x3/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "208 mã lực" },
@@ -512,12 +540,18 @@ export const cars: Car[] = [
     // Đệm mỏng hơn các xe khác để xe to hơn; mức phóng khi hover giảm tương ứng
     // để đầu và đuôi xe không vượt ra ngoài khung.
     imageClassName: "p-1 group-hover:scale-[1.015]",
-    gallery: [
-      "/images/cars/bmw-x5/gallery-1.jpg",
-      "/images/cars/bmw-x5/gallery-2.jpg",
-      "/images/cars/bmw-x5/gallery-3.jpg",
-      "/images/cars/bmw-x5/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x5/ngoai-that-1.jpg",
+        "/images/cars/bmw-x5/ngoai-that-2.jpg",
+        "/images/cars/bmw-x5/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x5/noi-that-1.jpg",
+        "/images/cars/bmw-x5/noi-that-2.jpg",
+        "/images/cars/bmw-x5/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L 6 xy-lanh Turbo" },
       { label: "Công suất", value: "381 mã lực" },
@@ -608,12 +642,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-x7/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-x7/gallery-1.jpg",
-      "/images/cars/bmw-x7/gallery-2.jpg",
-      "/images/cars/bmw-x7/gallery-3.jpg",
-      "/images/cars/bmw-x7/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x7/ngoai-that-1.jpg",
+        "/images/cars/bmw-x7/ngoai-that-2.jpg",
+        "/images/cars/bmw-x7/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x7/noi-that-1.jpg",
+        "/images/cars/bmw-x7/noi-that-2.jpg",
+        "/images/cars/bmw-x7/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L 6 xy-lanh Turbo" },
       { label: "Công suất", value: "381 mã lực" },
@@ -705,12 +745,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-i4/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-i4/gallery-1.jpg",
-      "/images/cars/bmw-i4/gallery-2.jpg",
-      "/images/cars/bmw-i4/gallery-3.jpg",
-      "/images/cars/bmw-i4/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-i4/ngoai-that-1.jpg",
+        "/images/cars/bmw-i4/ngoai-that-2.jpg",
+        "/images/cars/bmw-i4/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-i4/noi-that-1.jpg",
+        "/images/cars/bmw-i4/noi-that-2.jpg",
+        "/images/cars/bmw-i4/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Hệ truyền động", value: "Thuần điện eDrive" },
       { label: "Công suất", value: "340 mã lực" },
@@ -796,12 +842,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-ix3/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-ix3/gallery-1.jpg",
-      "/images/cars/bmw-ix3/gallery-2.jpg",
-      "/images/cars/bmw-ix3/gallery-3.jpg",
-      "/images/cars/bmw-ix3/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-ix3/ngoai-that-1.jpg",
+        "/images/cars/bmw-ix3/ngoai-that-2.jpg",
+        "/images/cars/bmw-ix3/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-ix3/noi-that-1.jpg",
+        "/images/cars/bmw-ix3/noi-that-2.jpg",
+        "/images/cars/bmw-ix3/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Hệ truyền động", value: "Thuần điện eDrive" },
       { label: "Công suất", value: "286 mã lực" },
@@ -884,12 +936,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-m4/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-m4/gallery-1.jpg",
-      "/images/cars/bmw-m4/gallery-2.jpg",
-      "/images/cars/bmw-m4/gallery-3.jpg",
-      "/images/cars/bmw-m4/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-m4/ngoai-that-1.jpg",
+        "/images/cars/bmw-m4/ngoai-that-2.jpg",
+        "/images/cars/bmw-m4/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-m4/noi-that-1.jpg",
+        "/images/cars/bmw-m4/noi-that-2.jpg",
+        "/images/cars/bmw-m4/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
       { label: "Công suất", value: "530 mã lực" },
@@ -982,12 +1040,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-m2/hero-g87.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-m2/gallery-1.jpg",
-      "/images/cars/bmw-m2/gallery-2.jpg",
-      "/images/cars/bmw-m2/gallery-3.jpg",
-      "/images/cars/bmw-m2/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-m2/ngoai-that-1.jpg",
+        "/images/cars/bmw-m2/ngoai-that-2.jpg",
+        "/images/cars/bmw-m2/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-m2/noi-that-1.jpg",
+        "/images/cars/bmw-m2/noi-that-2.jpg",
+        "/images/cars/bmw-m2/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
       { label: "Công suất", value: "480 mã lực" },
@@ -1073,12 +1137,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-m3/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-m3/gallery-1.jpg",
-      "/images/cars/bmw-m3/gallery-2.jpg",
-      "/images/cars/bmw-m3/gallery-3.jpg",
-      "/images/cars/bmw-m3/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-m3/ngoai-that-1.jpg",
+        "/images/cars/bmw-m3/ngoai-that-2.jpg",
+        "/images/cars/bmw-m3/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-m3/noi-that-1.jpg",
+        "/images/cars/bmw-m3/noi-that-2.jpg",
+        "/images/cars/bmw-m3/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
       { label: "Công suất", value: "530 mã lực" },
@@ -1165,12 +1235,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-m3-touring/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-m3-touring/gallery-1.jpg",
-      "/images/cars/bmw-m3-touring/gallery-2.jpg",
-      "/images/cars/bmw-m3-touring/gallery-3.jpg",
-      "/images/cars/bmw-m3-touring/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-m3-touring/ngoai-that-1.jpg",
+        "/images/cars/bmw-m3-touring/ngoai-that-2.jpg",
+        "/images/cars/bmw-m3-touring/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-m3-touring/noi-that-1.jpg",
+        "/images/cars/bmw-m3-touring/noi-that-2.jpg",
+        "/images/cars/bmw-m3-touring/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
       { label: "Công suất", value: "530 mã lực" },
@@ -1256,12 +1332,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-x1/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-x1/gallery-1.jpg",
-      "/images/cars/bmw-x1/gallery-2.jpg",
-      "/images/cars/bmw-x1/gallery-3.jpg",
-      "/images/cars/bmw-x1/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x1/ngoai-that-1.jpg",
+        "/images/cars/bmw-x1/ngoai-that-2.jpg",
+        "/images/cars/bmw-x1/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x1/noi-that-1.jpg",
+        "/images/cars/bmw-x1/noi-that-2.jpg",
+        "/images/cars/bmw-x1/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "204 mã lực" },
@@ -1344,12 +1426,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-430i-convertible/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-430i-convertible/gallery-1.jpg",
-      "/images/cars/bmw-430i-convertible/gallery-2.jpg",
-      "/images/cars/bmw-430i-convertible/gallery-3.jpg",
-      "/images/cars/bmw-430i-convertible/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-430i-convertible/ngoai-that-1.jpg",
+        "/images/cars/bmw-430i-convertible/ngoai-that-2.jpg",
+        "/images/cars/bmw-430i-convertible/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-430i-convertible/noi-that-1.jpg",
+        "/images/cars/bmw-430i-convertible/noi-that-2.jpg",
+        "/images/cars/bmw-430i-convertible/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "258 mã lực" },
@@ -1434,12 +1522,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-430i-gran-coupe/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-430i-gran-coupe/gallery-1.jpg",
-      "/images/cars/bmw-430i-gran-coupe/gallery-2.jpg",
-      "/images/cars/bmw-430i-gran-coupe/gallery-3.jpg",
-      "/images/cars/bmw-430i-gran-coupe/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-430i-gran-coupe/ngoai-that-1.jpg",
+        "/images/cars/bmw-430i-gran-coupe/ngoai-that-2.jpg",
+        "/images/cars/bmw-430i-gran-coupe/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-430i-gran-coupe/noi-that-1.jpg",
+        "/images/cars/bmw-430i-gran-coupe/noi-that-2.jpg",
+        "/images/cars/bmw-430i-gran-coupe/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "258 mã lực" },
@@ -1521,12 +1615,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-x4/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-x4/gallery-1.jpg",
-      "/images/cars/bmw-x4/gallery-2.jpg",
-      "/images/cars/bmw-x4/gallery-3.jpg",
-      "/images/cars/bmw-x4/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x4/ngoai-that-1.jpg",
+        "/images/cars/bmw-x4/ngoai-that-2.jpg",
+        "/images/cars/bmw-x4/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x4/noi-that-1.jpg",
+        "/images/cars/bmw-x4/noi-that-2.jpg",
+        "/images/cars/bmw-x4/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "184 mã lực" },
@@ -1608,12 +1708,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-x6/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-x6/gallery-1.jpg",
-      "/images/cars/bmw-x6/gallery-2.jpg",
-      "/images/cars/bmw-x6/gallery-3.jpg",
-      "/images/cars/bmw-x6/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-x6/ngoai-that-1.jpg",
+        "/images/cars/bmw-x6/ngoai-that-2.jpg",
+        "/images/cars/bmw-x6/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-x6/noi-that-1.jpg",
+        "/images/cars/bmw-x6/noi-that-2.jpg",
+        "/images/cars/bmw-x6/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "3.0L 6 xy-lanh Turbo" },
       { label: "Công suất", value: "381 mã lực" },
@@ -1695,12 +1801,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-z4/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-z4/gallery-1.jpg",
-      "/images/cars/bmw-z4/gallery-2.jpg",
-      "/images/cars/bmw-z4/gallery-3.jpg",
-      "/images/cars/bmw-z4/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-z4/ngoai-that-1.jpg",
+        "/images/cars/bmw-z4/ngoai-that-2.jpg",
+        "/images/cars/bmw-z4/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-z4/noi-that-1.jpg",
+        "/images/cars/bmw-z4/noi-that-2.jpg",
+        "/images/cars/bmw-z4/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Động cơ", value: "2.0L TwinPower Turbo" },
       { label: "Công suất", value: "197 mã lực" },
@@ -1783,12 +1895,18 @@ export const cars: Car[] = [
     image: "/images/cars/bmw-i7/hero.png",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
-    gallery: [
-      "/images/cars/bmw-i7/gallery-1.jpg",
-      "/images/cars/bmw-i7/gallery-2.jpg",
-      "/images/cars/bmw-i7/gallery-3.jpg",
-      "/images/cars/bmw-i7/gallery-4.jpg",
-    ],
+    gallery: {
+      exterior: [
+        "/images/cars/bmw-i7/ngoai-that-1.jpg",
+        "/images/cars/bmw-i7/ngoai-that-2.jpg",
+        "/images/cars/bmw-i7/ngoai-that-3.jpg",
+      ],
+      interior: [
+        "/images/cars/bmw-i7/noi-that-1.jpg",
+        "/images/cars/bmw-i7/noi-that-2.jpg",
+        "/images/cars/bmw-i7/noi-that-3.jpg",
+      ],
+    },
     quickSpecs: [
       { label: "Hệ truyền động", value: "Thuần điện xDrive" },
       { label: "Công suất", value: "544 mã lực" },

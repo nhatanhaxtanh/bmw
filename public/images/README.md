@@ -14,7 +14,7 @@ trong `src/data/cars.ts`, `src/data/news.ts`, `src/components/sections/hero.tsx`
 ```
 hero/hero-5-series.jpg     Slide 1 — BMW 5 Series
 hero/hero-x7.jpg           Slide 2 — BMW X7
-hero/hero-i4.jpg           Slide 3 — BMW i4
+hero/hero-m4.jpg           Slide 3 — BMW M4
 hero/lineup.jpg            Banner trang "Bảng giá xe"
 hero/lai-thu.jpg           Banner trang "Đăng ký lái thử"
 ```
@@ -23,18 +23,37 @@ hero/lai-thu.jpg           Banner trang "Đăng ký lái thử"
 
 ## 2. Ảnh xe — `cars/<slug>/`
 
-Mỗi dòng xe cần 1 ảnh `hero.jpg` (16:9) và 4 ảnh gallery (16:10).
+Mỗi dòng xe cần 1 ảnh chính (tỉ lệ ngang, nền trắng hoặc tách nền) và 6 ảnh chi
+tiết cho gallery ở trang chi tiết: 3 ảnh ngoại thất, 3 ảnh nội thất (16:10).
 
 ```
-cars/bmw-3-series/hero.jpg      + gallery-1.jpg … gallery-4.jpg
-cars/bmw-5-series/hero.jpg      + gallery-1.jpg … gallery-4.jpg
-cars/bmw-7-series/hero.jpg      + gallery-1.jpg … gallery-4.jpg
-cars/bmw-x3/hero.jpg            + gallery-1.jpg … gallery-4.jpg
-cars/bmw-x5/hero.jpg            + gallery-1.jpg … gallery-4.jpg
-cars/bmw-x7/hero.jpg            + gallery-1.jpg … gallery-4.jpg
-cars/bmw-i4/hero.jpg            + gallery-1.jpg … gallery-4.jpg
-cars/bmw-ix3/hero.jpg           + gallery-1.jpg … gallery-4.jpg
-cars/bmw-m4/hero.jpg            + gallery-1.jpg … gallery-4.jpg
+cars/<slug>/ngoai-that-1.jpg … ngoai-that-3.jpg
+cars/<slug>/noi-that-1.jpg   … noi-that-3.jpg
+```
+
+Ảnh chính của từng dòng xe (tên file khác nhau vì đổi ảnh thì đổi tên để tránh
+cache trình duyệt trả về ảnh cũ):
+
+```
+cars/bmw-3-series/hero-hd.jpg
+cars/bmw-5-series/hero.png
+cars/bmw-7-series/hero.png
+cars/bmw-x3/hero-g45.png
+cars/bmw-x5/hero.png
+cars/bmw-x7/hero.png
+cars/bmw-i4/hero.png
+cars/bmw-ix3/hero.png
+cars/bmw-m4/hero.png
+cars/bmw-m2/hero-g87.png
+cars/bmw-m3/hero.png
+cars/bmw-m3-touring/hero.png
+cars/bmw-x1/hero.png
+cars/bmw-430i-convertible/hero.png
+cars/bmw-430i-gran-coupe/hero.png
+cars/bmw-x4/hero.png
+cars/bmw-x6/hero.png
+cars/bmw-z4/hero.png
+cars/bmw-i7/hero.png
 ```
 
 ## 3. Ảnh bài viết — `news/<slug>/cover.jpg` (16:9)

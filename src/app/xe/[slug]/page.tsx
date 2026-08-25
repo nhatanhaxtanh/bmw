@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check, Download, Phone, Sparkles } from "lucide-react";
 
 import { PageHero } from "@/components/page-hero";
-import { CarGallery, ColorPicker } from "@/components/car-gallery";
+import { CarGallery } from "@/components/car-gallery";
 import { CarCard } from "@/components/car-card";
 import { Reveal } from "@/components/motion/reveal";
 import { TestDriveCta } from "@/components/sections/test-drive-cta";
@@ -96,7 +96,7 @@ export default async function CarDetailPage({ params }: PageProps<"/xe/[slug]">)
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr] lg:gap-14">
             <Reveal>
-              <CarGallery images={car.gallery} name={car.name} />
+              <CarGallery gallery={car.gallery} name={car.name} />
             </Reveal>
 
             <Reveal direction="left" delay={0.1}>
@@ -113,13 +113,6 @@ export default async function CarDetailPage({ params }: PageProps<"/xe/[slug]">)
                 <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
                   {car.description}
                 </p>
-
-                <h3 className="mt-9 text-[11px] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
-                  Màu ngoại thất
-                </h3>
-                <div className="mt-4">
-                  <ColorPicker colors={car.colors} />
-                </div>
 
                 <div className="mt-9 flex flex-col gap-2.5 sm:flex-row lg:flex-col">
                   <Button asChild size="lg" className="rounded-full">
