@@ -46,20 +46,20 @@ const slides: Slide[] = [
     image: "/images/hero/hero-x7.jpg",
   },
   {
-    slug: "bmw-i4",
-    eyebrow: "Thuần điện",
-    title: "BMW i4",
-    subtitle: "Tương lai vẫn mang DNA lái của BMW",
+    slug: "bmw-m4-competition",
+    eyebrow: "Đỉnh cao BMW M",
+    title: "BMW M4",
+    subtitle: "Chiếc coupé sinh ra cho đường đua",
     description:
-      "340 mã lực, quãng đường tới 590 km và âm thanh IconicSounds Electric do Hans Zimmer thiết kế riêng.",
-    price: 3_299_000_000,
-    image: "/images/hero/hero-i4.jpg",
+      "Động cơ S58 tăng áp kép 530 mã lực, M xDrive chuyển được về cầu sau thuần tuý và gói M Carbon giảm hơn 20 kg khối lượng.",
+    price: 6_499_000_000,
+    image: "/images/hero/hero-m4.jpg",
   },
 ];
 
 const AUTOPLAY_MS = 7000;
-/** Slide có clip nền ở lại lâu hơn để chạy hết đoạn phim (clip dài 14 giây). */
-const VIDEO_AUTOPLAY_MS = 14000;
+/** Slide có clip nền ở lại lâu hơn slide ảnh để kịp thấy đoạn phim chuyển cảnh. */
+const VIDEO_AUTOPLAY_MS = 13000;
 
 export function Hero() {
   const [index, setIndex] = useState(0);

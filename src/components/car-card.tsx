@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 const specIcons = [Zap, Gauge, Timer, Users];
 
 export function CarCard({ car, className }: { car: Car; className?: string }) {
+  const contain = car.imageFit === "contain";
+
   return (
     <article
       className={cn(
@@ -19,7 +21,12 @@ export function CarCard({ car, className }: { car: Car; className?: string }) {
     >
       <Link
         href={`/xe/${car.slug}`}
-        className="relative block aspect-16/10 overflow-hidden bg-muted"
+        className={cn(
+          "relative block aspect-16/10 overflow-hidden",
+          // Ảnh studio nền trắng cần khung trắng để phần lề của object-contain
+          // không lộ ra thành viền xám.
+          contain ? "bg-white" : "bg-muted",
+        )}
       >
         <SmartImage
           src={car.image}
@@ -27,7 +34,14 @@ export function CarCard({ car, className }: { car: Car; className?: string }) {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           placeholderLabel={car.name}
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className={cn(
+            "transition-transform duration-700",
+            // Ảnh studio cắt sát thân xe nên mặc định không phóng khi hover —
+            // chỉ cần 5% là đầu và đuôi xe chạm mép khung. Đệm và hover của
+            // từng xe chỉnh riêng qua `imageClassName`.
+            contain ? "object-contain" : "object-cover group-hover:scale-105",
+            car.imageClassName,
+          )}
         />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/45 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 

@@ -25,6 +25,13 @@ export type Car = {
   isNew?: boolean;
   /** Ảnh sản phẩm — thay bằng ảnh thật trong /public/images/cars/... */
   image: string;
+  /**
+   * "contain" dành cho ảnh studio nền trắng: xe hiển thị trọn và nhỏ lại trong
+   * khung card thay vì bị crop sát mép như ảnh bối cảnh (mặc định "cover").
+   */
+  imageFit?: "cover" | "contain";
+  /** Lớp Tailwind chỉnh riêng ảnh của xe này trong card (đệm, hiệu ứng hover). */
+  imageClassName?: string;
   gallery: string[];
   quickSpecs: { label: string; value: string }[];
   highlights: { title: string; description: string }[];
@@ -46,7 +53,9 @@ export const cars: Car[] = [
       "BMW 3 Series là biểu tượng của dòng sedan thể thao hạng sang suốt gần 50 năm. Thế hệ mới mang ngôn ngữ thiết kế sắc sảo, khoang lái BMW Curved Display và động cơ TwinPower Turbo cân bằng hoàn hảo giữa cảm giác lái phấn khích và sự tiện nghi thường nhật.",
     priceFrom: vnd(1_499_000_000),
     badge: "Bán chạy",
-    image: "/images/cars/bmw-3-series/hero.jpg",
+    image: "/images/cars/bmw-3-series/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
     gallery: [
       "/images/cars/bmw-3-series/gallery-1.jpg",
       "/images/cars/bmw-3-series/gallery-2.jpg",
@@ -154,7 +163,9 @@ export const cars: Car[] = [
     priceFrom: vnd(2_499_000_000),
     isNew: true,
     badge: "Thế hệ mới",
-    image: "/images/cars/bmw-5-series/hero.jpg",
+    image: "/images/cars/bmw-5-series/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-1.5 group-hover:scale-105",
     gallery: [
       "/images/cars/bmw-5-series/gallery-1.jpg",
       "/images/cars/bmw-5-series/gallery-2.jpg",
@@ -253,7 +264,9 @@ export const cars: Car[] = [
       "BMW 7 Series là tuyên ngôn về sự sang trọng tối thượng: lưới tản nhiệt phát sáng Iconic Glow, cửa xe tự động, và BMW Theatre Screen 31 inch độ phân giải 8K biến hàng ghế sau thành rạp chiếu phim riêng.",
     priceFrom: vnd(4_499_000_000),
     badge: "Flagship",
-    image: "/images/cars/bmw-7-series/hero.jpg",
+    image: "/images/cars/bmw-7-series/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
     gallery: [
       "/images/cars/bmw-7-series/gallery-1.jpg",
       "/images/cars/bmw-7-series/gallery-2.jpg",
@@ -352,7 +365,9 @@ export const cars: Car[] = [
       "BMW X3 thế hệ mới sở hữu ngôn ngữ thiết kế mạnh mẽ hơn, khoang cabin rộng rãi và hệ dẫn động xDrive thông minh — lựa chọn cân bằng nhất cho gia đình hiện đại vừa cần tiện nghi vừa muốn cảm giác lái thể thao.",
     priceFrom: vnd(1_999_000_000),
     badge: "Bán chạy",
-    image: "/images/cars/bmw-x3/hero.jpg",
+    image: "/images/cars/bmw-x3/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
     gallery: [
       "/images/cars/bmw-x3/gallery-1.jpg",
       "/images/cars/bmw-x3/gallery-2.jpg",
@@ -447,7 +462,11 @@ export const cars: Car[] = [
     description:
       "BMW X5 là chiếc SAV khai sinh cả một phân khúc. Phiên bản mới kết hợp động cơ 6 xy-lanh mượt mà, hệ thống treo khí nén hai cầu và nội thất thửa riêng — đủ êm ái cho đường phố, đủ mạnh mẽ cho những hành trình dài.",
     priceFrom: vnd(3_899_000_000),
-    image: "/images/cars/bmw-x5/hero.jpg",
+    image: "/images/cars/bmw-x5/hero.png",
+    imageFit: "contain",
+    // Đệm mỏng hơn các xe khác để xe to hơn; mức phóng khi hover giảm tương ứng
+    // để đầu và đuôi xe không vượt ra ngoài khung.
+    imageClassName: "p-1 group-hover:scale-[1.015]",
     gallery: [
       "/images/cars/bmw-x5/gallery-1.jpg",
       "/images/cars/bmw-x5/gallery-2.jpg",
@@ -541,7 +560,9 @@ export const cars: Car[] = [
       "BMW X7 mang tới không gian ba hàng ghế đẳng cấp thương gia trong hình hài một chiếc SAV bề thế. Đèn pha chia đôi đặc trưng, treo khí nén Executive Drive và cabin cách âm gần như tuyệt đối.",
     priceFrom: vnd(5_999_000_000),
     badge: "7 chỗ",
-    image: "/images/cars/bmw-x7/hero.jpg",
+    image: "/images/cars/bmw-x7/hero.png",
+    imageFit: "contain",
+    imageClassName: "p-3 group-hover:scale-105",
     gallery: [
       "/images/cars/bmw-x7/gallery-1.jpg",
       "/images/cars/bmw-x7/gallery-2.jpg",
