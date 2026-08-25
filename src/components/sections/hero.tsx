@@ -29,7 +29,7 @@ const slides: Slide[] = [
     subtitle: "Sedan doanh nhân định nghĩa lại đẳng cấp",
     description:
       "BMW Interaction Bar, công nghệ Mild Hybrid 48V và Highway Assistant — thế hệ thứ tám đưa chuẩn mực xe sang lên một tầm cao mới.",
-    price: 2_499_000_000,
+    price: 2_779_000_000,
     image: "/images/hero/hero-5-series.jpg",
     // Slide có `video` sẽ chạy clip nền; `image` đóng vai trò poster và là
     // ảnh dự phòng khi người dùng bật "giảm chuyển động".
@@ -42,7 +42,7 @@ const slides: Slide[] = [
     subtitle: "Bảy chỗ ngồi, một đẳng cấp",
     description:
       "Không gian ba hàng ghế thương gia, trần kính Sky Lounge và hệ thống treo khí nén Executive Drive Pro.",
-    price: 5_999_000_000,
+    price: 6_299_000_000,
     image: "/images/hero/hero-x7.jpg",
   },
   {

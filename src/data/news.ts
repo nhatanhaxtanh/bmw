@@ -26,7 +26,7 @@ export const news: Article[] = [
     slug: "bmw-5-series-the-he-moi-ra-mat-viet-nam",
     title: "BMW 5 Series thế hệ thứ tám chính thức ra mắt thị trường Việt Nam",
     excerpt:
-      "Mẫu sedan doanh nhân biểu tượng trở lại với thiết kế bề thế hơn, BMW Interaction Bar và công nghệ Mild Hybrid 48V, giá bán từ 2,499 tỷ đồng.",
+      "Mẫu sedan doanh nhân biểu tượng trở lại với thiết kế bề thế hơn, BMW Interaction Bar và công nghệ Mild Hybrid 48V, giá bán từ 2,779 tỷ đồng.",
     category: "Sản phẩm",
     date: "2026-08-12",
     readingTime: 5,
@@ -87,7 +87,7 @@ export const news: Article[] = [
       },
       {
         type: "paragraph",
-        text: "BMW 520i M Sport có giá niêm yết 2,499 tỷ đồng, bản 530i M Sport ở mức 3,099 tỷ đồng. Khách hàng đặt cọc trong tháng này tại BMW Sài Gòn được hỗ trợ 50% lệ phí trước bạ, tặng gói bảo dưỡng 3 năm và bộ phụ kiện chính hãng.",
+        text: "BMW 520i M Sport có giá niêm yết 2,779 tỷ đồng, bản 530i M Sport ở mức 3,189 tỷ đồng. Khách hàng đặt cọc trong tháng này tại BMW Sài Gòn được hỗ trợ 50% lệ phí trước bạ, tặng gói bảo dưỡng 3 năm và bộ phụ kiện chính hãng.",
       },
       {
         type: "paragraph",
@@ -358,7 +358,7 @@ export const news: Article[] = [
       },
       {
         type: "paragraph",
-        text: "BMW X7 xDrive40i M Sport hiện có giá niêm yết 5,999 tỷ đồng. Xe trưng bày đã có mặt tại showroom BMW Sài Gòn.",
+        text: "BMW X7 xDrive40i M Sport hiện có giá niêm yết 6,299 tỷ đồng. Xe trưng bày đã có mặt tại showroom BMW Sài Gòn.",
       },
     ],
   },
