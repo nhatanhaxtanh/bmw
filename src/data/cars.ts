@@ -60,7 +60,7 @@ export const cars: Car[] = [
       "BMW 3 Series là biểu tượng của dòng sedan thể thao hạng sang suốt gần 50 năm. Thế hệ mới mang ngôn ngữ thiết kế sắc sảo, khoang lái BMW Curved Display và động cơ TwinPower Turbo cân bằng hoàn hảo giữa cảm giác lái phấn khích và sự tiện nghi thường nhật.",
     priceFrom: vnd(1_649_000_000),
     badge: "Bán chạy",
-    image: "/images/cars/bmw-3-series/hero.png",
+    image: "/images/cars/bmw-3-series/hero-hd.jpg",
     imageFit: "contain",
     imageClassName: "p-3 group-hover:scale-105",
     gallery: [
