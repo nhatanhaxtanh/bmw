@@ -1,4 +1,4 @@
-import { CalendarCheck, CarFront, PhoneCall, Sparkles } from "lucide-react";
+import { CalendarCheck, CarFront, PhoneCall } from "lucide-react";
 
 import { TestDriveForm } from "@/components/test-drive-form";
 import { Reveal } from "@/components/motion/reveal";
@@ -75,15 +75,6 @@ export function TestDriveCta({ defaultCar }: { defaultCar?: string }) {
                 </li>
               ))}
             </ol>
-
-            <div className="mt-10 flex items-start gap-3 rounded-xl border border-white/15 bg-white/5 p-4">
-              <Sparkles className="mt-0.5 size-4.5 shrink-0 text-bmw-sky" />
-              <p className="text-[13px] leading-relaxed text-white/70">
-                Khách hàng đăng ký lái thử trong tháng này nhận ngay voucher bảo
-                dưỡng trị giá <strong className="text-white">5.000.000 ₫</strong>{" "}
-                khi hoàn tất giao dịch mua xe.
-              </p>
-            </div>
           </Reveal>
 
           <Reveal direction="left" delay={0.1}>
