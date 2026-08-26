@@ -1967,14 +1967,17 @@ export const cars: Car[] = [
     imageClassName: "p-3 group-hover:scale-105",
     gallery: {
       exterior: [
-        "/images/cars/bmw-i7/ngoai-that-1.jpg",
-        "/images/cars/bmw-i7/ngoai-that-2.jpg",
-        "/images/cars/bmw-i7/ngoai-that-3.jpg",
+        "/images/cars/bmw-i7/ngoai-that-1.webp",
+        "/images/cars/bmw-i7/ngoai-that-2.webp",
+        "/images/cars/bmw-i7/ngoai-that-3.webp",
+        "/images/cars/bmw-i7/ngoai-that-4.webp",
+        "/images/cars/bmw-i7/ngoai-that-5.webp",
+        "/images/cars/bmw-i7/ngoai-that-6.webp",
       ],
       interior: [
-        "/images/cars/bmw-i7/noi-that-1.jpg",
-        "/images/cars/bmw-i7/noi-that-2.jpg",
-        "/images/cars/bmw-i7/noi-that-3.jpg",
+        "/images/cars/bmw-i7/noi-that-1.webp",
+        "/images/cars/bmw-i7/noi-that-2.webp",
+        "/images/cars/bmw-i7/noi-that-3.webp",
       ],
     },
     quickSpecs: [
