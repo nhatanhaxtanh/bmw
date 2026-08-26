@@ -567,11 +567,13 @@ export const cars: Car[] = [
         "/images/cars/bmw-x5/ngoai-that-1.jpg",
         "/images/cars/bmw-x5/ngoai-that-2.jpg",
         "/images/cars/bmw-x5/ngoai-that-3.jpg",
+        "/images/cars/bmw-x5/ngoai-that-4.jpg",
       ],
       interior: [
         "/images/cars/bmw-x5/noi-that-1.jpg",
         "/images/cars/bmw-x5/noi-that-2.jpg",
         "/images/cars/bmw-x5/noi-that-3.jpg",
+        "/images/cars/bmw-x5/noi-that-4.jpg",
       ],
     },
     quickSpecs: [
