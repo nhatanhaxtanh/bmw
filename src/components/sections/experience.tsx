@@ -14,7 +14,7 @@ const pillars = [
     label: "Phân bổ trọng lượng lý tưởng giữa hai cầu",
   },
   {
-    value: "3 năm",
+    value: "5 năm",
     label: "Bảo hành chính hãng không giới hạn số km",
   },
   {
