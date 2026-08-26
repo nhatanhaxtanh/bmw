@@ -5,7 +5,12 @@ export const site = {
   taglineVi: "Niềm vui thuần khiết sau tay lái",
   description:
     "Đại lý ủy quyền chính hãng BMW tại TP. Hồ Chí Minh — showroom trưng bày, lái thử tận nơi, xưởng dịch vụ tiêu chuẩn toàn cầu và chương trình ưu đãi cập nhật hàng tháng.",
-  url: "https://bmwsaigon.vn",
+  /**
+   * Phải khớp domain chính trên Vercel (www). Apex `bmwsaigon.vn` redirect 308
+   * sang đây — nếu khai non-www thì mọi URL trong sitemap và mọi thẻ canonical
+   * đều trỏ vào redirect, Search Console sẽ báo "Page with redirect".
+   */
+  url: "https://www.bmwsaigon.vn",
 
   hotline: "0949 686 867",
   hotlineHref: "tel:+84949686867",
