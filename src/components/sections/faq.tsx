@@ -19,7 +19,7 @@ export const faqs = [
   },
   {
     q: "Chính sách bảo hành của BMW như thế nào?",
-    a: "Toàn bộ xe BMW mới chính hãng được bảo hành 3 năm không giới hạn số km. Riêng pin cao áp trên các dòng xe điện BMW i được bảo hành 8 năm hoặc 160.000 km, tùy điều kiện nào đến trước.",
+    a: "Toàn bộ xe BMW mới chính hãng được bảo hành 5 năm không giới hạn số km. Riêng pin cao áp trên các dòng xe điện BMW i được bảo hành 8 năm hoặc 160.000 km, tùy điều kiện nào đến trước.",
   },
   {
     q: "Tôi có thể lái thử tại nhà không?",

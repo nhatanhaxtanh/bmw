@@ -15,7 +15,7 @@ const reasons = [
     icon: BadgeCheck,
     title: "Đại lý ủy quyền chính hãng",
     description:
-      "Toàn bộ xe được nhập khẩu và lắp ráp theo tiêu chuẩn BMW Group, đầy đủ giấy tờ và bảo hành chính hãng 3 năm không giới hạn số km.",
+      "Toàn bộ xe được nhập khẩu và lắp ráp theo tiêu chuẩn BMW Group, đầy đủ giấy tờ và bảo hành chính hãng 5 năm không giới hạn số km.",
   },
   {
     icon: Wrench,
