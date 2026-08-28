@@ -198,6 +198,7 @@ export const cars: Car[] = [
         "/images/cars/bmw-5-series/ngoai-that-4.webp",
         "/images/cars/bmw-5-series/ngoai-that-5.webp",
         "/images/cars/bmw-5-series/ngoai-that-6.webp",
+        "/images/cars/bmw-5-series/ngoai-that-7.webp",
       ],
       interior: [
         "/images/cars/bmw-5-series/noi-that-1.webp",
@@ -332,6 +333,7 @@ export const cars: Car[] = [
         "/images/cars/bmw-7-series/ngoai-that-7.webp",
         "/images/cars/bmw-7-series/ngoai-that-8.webp",
         "/images/cars/bmw-7-series/ngoai-that-9.webp",
+        "/images/cars/bmw-7-series/ngoai-that-10.webp",
       ],
       interior: [
         "/images/cars/bmw-7-series/noi-that-1.webp",
@@ -339,6 +341,7 @@ export const cars: Car[] = [
         "/images/cars/bmw-7-series/noi-that-3.webp",
         "/images/cars/bmw-7-series/noi-that-4.webp",
         "/images/cars/bmw-7-series/noi-that-5.webp",
+        "/images/cars/bmw-7-series/noi-that-6.jpg",
       ],
     },
     quickSpecs: [
@@ -453,13 +456,16 @@ export const cars: Car[] = [
         "/images/cars/bmw-x3/ngoai-that-6.webp",
         "/images/cars/bmw-x3/ngoai-that-7.webp",
         "/images/cars/bmw-x3/ngoai-that-8.webp",
-        "/images/cars/bmw-x3/ngoai-that-9.webp",
       ],
       interior: [
         "/images/cars/bmw-x3/noi-that-1.webp",
         "/images/cars/bmw-x3/noi-that-2.webp",
         "/images/cars/bmw-x3/noi-that-3.webp",
         "/images/cars/bmw-x3/noi-that-4.webp",
+        "/images/cars/bmw-x3/noi-that-5.webp",
+        "/images/cars/bmw-x3/noi-that-6.webp",
+        "/images/cars/bmw-x3/noi-that-7.webp",
+        "/images/cars/bmw-x3/noi-that-8.webp",
       ],
     },
     quickSpecs: [
@@ -567,13 +573,12 @@ export const cars: Car[] = [
         "/images/cars/bmw-x5/ngoai-that-1.jpg",
         "/images/cars/bmw-x5/ngoai-that-2.jpg",
         "/images/cars/bmw-x5/ngoai-that-3.jpg",
-        "/images/cars/bmw-x5/ngoai-that-4.jpg",
       ],
       interior: [
-        "/images/cars/bmw-x5/noi-that-1.jpg",
-        "/images/cars/bmw-x5/noi-that-2.jpg",
-        "/images/cars/bmw-x5/noi-that-3.jpg",
-        "/images/cars/bmw-x5/noi-that-4.jpg",
+        "/images/cars/bmw-x5/noi-that-1.webp",
+        "/images/cars/bmw-x5/noi-that-2.webp",
+        "/images/cars/bmw-x5/noi-that-3.webp",
+        "/images/cars/bmw-x5/noi-that-4.webp",
       ],
     },
     quickSpecs: [
@@ -679,7 +684,8 @@ export const cars: Car[] = [
       interior: [
         "/images/cars/bmw-x7/noi-that-1.webp",
         "/images/cars/bmw-x7/noi-that-2.webp",
-        "/images/cars/bmw-x7/noi-that-3.webp",
+        "/images/cars/bmw-x7/noi-that-3.jpg",
+        "/images/cars/bmw-x7/noi-that-4.jpg",
       ],
     },
     quickSpecs: [
@@ -876,14 +882,21 @@ export const cars: Car[] = [
     imageClassName: "p-3 group-hover:scale-105",
     gallery: {
       exterior: [
-        "/images/cars/bmw-ix3/ngoai-that-1.jpg",
-        "/images/cars/bmw-ix3/ngoai-that-2.jpg",
-        "/images/cars/bmw-ix3/ngoai-that-3.jpg",
+        "/images/cars/bmw-ix3/ngoai-that-1.webp",
+        "/images/cars/bmw-ix3/ngoai-that-2.webp",
+        "/images/cars/bmw-ix3/ngoai-that-3.webp",
+        "/images/cars/bmw-ix3/ngoai-that-4.webp",
+        "/images/cars/bmw-ix3/ngoai-that-5.webp",
+        "/images/cars/bmw-ix3/ngoai-that-6.webp",
       ],
       interior: [
-        "/images/cars/bmw-ix3/noi-that-1.jpg",
-        "/images/cars/bmw-ix3/noi-that-2.jpg",
-        "/images/cars/bmw-ix3/noi-that-3.jpg",
+        "/images/cars/bmw-ix3/noi-that-1.webp",
+        "/images/cars/bmw-ix3/noi-that-2.webp",
+        "/images/cars/bmw-ix3/noi-that-3.webp",
+        "/images/cars/bmw-ix3/noi-that-4.webp",
+        "/images/cars/bmw-ix3/noi-that-5.webp",
+        "/images/cars/bmw-ix3/noi-that-6.webp",
+        "/images/cars/bmw-ix3/noi-that-7.webp",
       ],
     },
     quickSpecs: [
@@ -1090,11 +1103,6 @@ export const cars: Car[] = [
         "/images/cars/bmw-m2/noi-that-1.webp",
         "/images/cars/bmw-m2/noi-that-2.webp",
         "/images/cars/bmw-m2/noi-that-3.webp",
-        "/images/cars/bmw-m2/noi-that-4.webp",
-        "/images/cars/bmw-m2/noi-that-5.webp",
-        "/images/cars/bmw-m2/noi-that-6.jpg",
-        "/images/cars/bmw-m2/noi-that-7.webp",
-        "/images/cars/bmw-m2/noi-that-8.webp",
       ],
     },
     quickSpecs: [
@@ -1399,6 +1407,7 @@ export const cars: Car[] = [
         "/images/cars/bmw-x1/noi-that-1.webp",
         "/images/cars/bmw-x1/noi-that-2.webp",
         "/images/cars/bmw-x1/noi-that-3.webp",
+        "/images/cars/bmw-x1/noi-that-4.jpg",
       ],
     },
     quickSpecs: [
@@ -1685,6 +1694,8 @@ export const cars: Car[] = [
         "/images/cars/bmw-x4/ngoai-that-1.jpg",
         "/images/cars/bmw-x4/ngoai-that-2.jpg",
         "/images/cars/bmw-x4/ngoai-that-3.jpg",
+        "/images/cars/bmw-x4/ngoai-that-4.jpg",
+        "/images/cars/bmw-x4/ngoai-that-5.jpg",
       ],
       interior: [
         "/images/cars/bmw-x4/noi-that-1.jpg",
@@ -1967,17 +1978,21 @@ export const cars: Car[] = [
     imageClassName: "p-3 group-hover:scale-105",
     gallery: {
       exterior: [
-        "/images/cars/bmw-i7/ngoai-that-1.webp",
-        "/images/cars/bmw-i7/ngoai-that-2.webp",
-        "/images/cars/bmw-i7/ngoai-that-3.webp",
-        "/images/cars/bmw-i7/ngoai-that-4.webp",
-        "/images/cars/bmw-i7/ngoai-that-5.webp",
-        "/images/cars/bmw-i7/ngoai-that-6.webp",
+        "/images/cars/bmw-i7/ngoai-that-1.jpg",
+        "/images/cars/bmw-i7/ngoai-that-2.jpg",
+        "/images/cars/bmw-i7/ngoai-that-3.jpg",
+        "/images/cars/bmw-i7/ngoai-that-4.jpg",
       ],
       interior: [
-        "/images/cars/bmw-i7/noi-that-1.webp",
-        "/images/cars/bmw-i7/noi-that-2.webp",
-        "/images/cars/bmw-i7/noi-that-3.webp",
+        "/images/cars/bmw-i7/noi-that-1.jpg",
+        "/images/cars/bmw-i7/noi-that-2.jpg",
+        "/images/cars/bmw-i7/noi-that-3.jpg",
+        "/images/cars/bmw-i7/noi-that-4.jpg",
+        "/images/cars/bmw-i7/noi-that-5.jpg",
+        "/images/cars/bmw-i7/noi-that-6.jpg",
+        "/images/cars/bmw-i7/noi-that-7.jpg",
+        "/images/cars/bmw-i7/noi-that-8.jpg",
+        "/images/cars/bmw-i7/noi-that-9.jpg",
       ],
     },
     quickSpecs: [
