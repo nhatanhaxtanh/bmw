@@ -1106,7 +1106,7 @@ export const cars: Car[] = [
       ],
     },
     quickSpecs: [
-      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Động cơ", value: "3.0L S58 TwinPower Turbo" },
       { label: "Công suất", value: "480 mã lực" },
       { label: "Tăng tốc 0–100", value: "4,1 giây" },
       { label: "Số chỗ", value: "4 chỗ" },
@@ -1132,7 +1132,7 @@ export const cars: Car[] = [
       {
         name: "M2 Coupé",
         price: vnd(4_099_000_000),
-        engine: "3.0L S58 TwinPower TwinTurbo",
+        engine: "3.0L S58 TwinPower Turbo",
         power: "480 mã lực / 600 Nm",
         highlight: "Phiên bản phân phối chính hãng",
       },
@@ -1207,7 +1207,7 @@ export const cars: Car[] = [
       ],
     },
     quickSpecs: [
-      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Động cơ", value: "3.0L S58 TwinPower Turbo" },
       { label: "Công suất", value: "530 mã lực" },
       { label: "Tăng tốc 0–100", value: "3,5 giây" },
       { label: "Số chỗ", value: "5 chỗ" },
@@ -1233,7 +1233,7 @@ export const cars: Car[] = [
       {
         name: "M3 Competition M xDrive",
         price: vnd(4_999_000_000),
-        engine: "3.0L S58 TwinPower TwinTurbo",
+        engine: "3.0L S58 TwinPower Turbo",
         power: "530 mã lực / 650 Nm",
         highlight: "Phiên bản phân phối chính hãng",
       },
@@ -1309,7 +1309,7 @@ export const cars: Car[] = [
       ],
     },
     quickSpecs: [
-      { label: "Động cơ", value: "3.0L S58 TwinTurbo" },
+      { label: "Động cơ", value: "3.0L S58 TwinPower Turbo" },
       { label: "Công suất", value: "530 mã lực" },
       { label: "Tăng tốc 0–100", value: "3,6 giây" },
       { label: "Khoang hành lý", value: "500 – 1.510 lít" },
@@ -1335,7 +1335,7 @@ export const cars: Car[] = [
       {
         name: "M3 Touring Competition M xDrive",
         price: vnd(5_389_000_000),
-        engine: "3.0L S58 TwinPower TwinTurbo",
+        engine: "3.0L S58 TwinPower Turbo",
         power: "530 mã lực / 650 Nm",
         highlight: "Phiên bản phân phối chính hãng",
       },
