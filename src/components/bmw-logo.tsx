@@ -49,14 +49,6 @@ export function SiteLogo({
         priority={priority}
         className="size-10 shrink-0"
       />
-      <span
-        className={cn(
-          "font-heading text-[17px] leading-none font-semibold tracking-[0.22em] uppercase",
-          invert ? "text-white" : "text-foreground",
-        )}
-      >
-        Sài Gòn
-      </span>
     </span>
   );
 }

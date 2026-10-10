@@ -105,13 +105,8 @@ export function SiteHeader() {
                                 href={`/xe/${car.slug}`}
                                 className="group flex items-center justify-between rounded-lg px-3 py-2.5 transition-colors hover:bg-accent"
                               >
-                                <span>
-                                  <span className="block text-[13.5px] font-medium">
-                                    {car.name}
-                                  </span>
-                                  <span className="block text-xs text-muted-foreground">
-                                    {car.tagline}
-                                  </span>
+                                <span className="text-[13.5px] font-medium">
+                                  {car.name}
                                 </span>
                                 <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
                               </Link>

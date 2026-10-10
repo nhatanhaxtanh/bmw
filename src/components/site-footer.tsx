@@ -41,12 +41,7 @@ export function SiteFooter() {
       <div className="container-page relative pt-16 pb-28 sm:pb-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <BmwRoundel variant="white" className="size-11" />
-              <p className="font-heading text-base font-semibold tracking-[0.22em] text-white uppercase">
-                Sài Gòn
-              </p>
-            </div>
+            <BmwRoundel variant="white" className="size-11" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed">
               {site.description}
             </p>
