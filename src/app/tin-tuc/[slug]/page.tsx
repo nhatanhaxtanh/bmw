@@ -106,6 +106,27 @@ function Block({ block }: { block: NewsBlock }) {
           ) : null}
         </figure>
       );
+    case "video":
+      return (
+        <figure className="my-10">
+          <div className="relative aspect-16/9 overflow-hidden rounded-2xl border border-border bg-muted">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${block.youtubeId}`}
+              title={block.title}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0 size-full"
+            />
+          </div>
+          {block.caption ? (
+            <figcaption className="mt-3 text-center text-[13px] text-muted-foreground">
+              {block.caption}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
   }
 }
 
@@ -157,7 +178,7 @@ export default async function ArticlePage({
         <div className="container-page">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-14">
             <article>
-              <Reveal>
+              <Reveal amount={0}>
                 <p className="text-[17px] leading-[1.75] font-medium text-foreground/90">
                   {article.excerpt}
                 </p>

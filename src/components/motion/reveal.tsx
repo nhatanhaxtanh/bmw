@@ -21,6 +21,7 @@ export function Reveal({
   direction = "up",
   duration = 0.65,
   once = true,
+  amount = 0.2,
   as = "div",
 }: {
   children: ReactNode;
@@ -29,6 +30,8 @@ export function Reveal({
   direction?: Direction;
   duration?: number;
   once?: boolean;
+  /** Tỉ lệ khối phải lọt vào màn hình mới hiện — khối rất dài cần giá trị nhỏ. */
+  amount?: number;
   as?: "div" | "section" | "li" | "span" | "article";
 }) {
   const reduce = useReducedMotion();
@@ -40,7 +43,7 @@ export function Reveal({
       className={cn(className)}
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once, amount: 0.2, margin: "0px 0px -80px 0px" }}
+      viewport={{ once, amount, margin: "0px 0px -80px 0px" }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
